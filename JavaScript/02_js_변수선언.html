@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript</title>
+    <script>
+        //변수선언 키워드(명령어) : var
+        //변수명 사용문자 : 영문, 숫자, _, $
+        //기본자료형 : 문자열(string), 숫자(number), 불린(boolean)
+        var str = "안녕하세요(문자열)";
+        var num = 100;
+        var bool = true;
+        var vNull = null;
+        var undef;
+        
+        document.write("문자열 출력 : " + str, "<br>");
+        document.write("숫자값 출력 : " + num, "<br>");
+        document.write("불린값 출력 : " + bool, "<br>");
+        document.write("Null값 출력 : " + vNull, "<br>");
+        document.write("undef값 출력 : " + undef, "<br>");
+        document.write("<hr>");
+        
+        //변수의 타입 확인 : typeof
+        document.write("typeof str : " + typeof str, "<br>");
+        document.write("typeof num : " + typeof num, "<br>");
+        document.write("typeof bool : " + typeof bool, "<br>");
+        document.write("typeof vNull : " + typeof vNull, "<br>");
+        document.write("typeof undef : " + typeof undef, "<br>");
+        document.write("<hr>");
+        
+        //---------------------------------------------------------
+        //변수에 정해진 타입의 개념이 없음.
+        str = 500;
+        document.write("typeof str : " + typeof str, "<br>");
+        
+        str = true;
+        document.write("typeof str : " + typeof str, "<br>");
+        
+        var sum = num + str; // num + boolean
+        document.write("합계 : " + sum, "<br>");
+        
+        //---------------------------------------------------------
+        //변수의 반복선언이 허용됨
+        var sum = 0; //변수 중복선언 및 사용이 허용
+        sum = sum + 100;
+        document.write("sum : " + sum, "<br>");
+        
+        var sum = null;
+        document.write("sum : " + sum, "<br>");
+        document.write("<hr>")
+        
+        //undefined : 선언만 하고 값이 없는 상태
+        var undef2;
+        document.write("undef2 : " + undef2, "<br>");
+        //NaN(Not a Number) : 숫자 + undefined 연산결과
+        document.write("num + undef2 : " + (num + undef2), "<br>");
+        
+        //자바스크립트에서 오류가 발생하면 이후의 스크립트는 실행 안됨ㄹ
+        document.write("자바스크립트 작성 끝");
+        document.write("<p>---------------------------</p>", "<br>");
+    </script>
+</head>
+    
+<body>
+    <h1>자바스크립트 변수선언</h1>
+    
+</body>
+    
+</html>
