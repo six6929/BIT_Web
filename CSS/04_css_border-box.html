@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>CSS border-box</title>
+    <style>
+        * {margin : 0; padding: 0}
+        
+        div {
+            width:300px;
+            height : 200px;
+            background-color: gray;
+            margin:10px;
+        }
+        
+        #div1 {
+            box-sizing: border-box;
+            background-color: aquamarine;
+            padding:50px;
+            border:50px solid black;
+        }
+        
+        #div2 {
+            background-color: cyan;
+            padding: 50px;
+            border : 50px solid black
+        
+        }
+        
+        #div3 {
+            background-color: green;
+            border-width:50px;
+            border-color :black;
+        }
+    </style>
+</head>
+    
+<body>
+    <h1>CSS border-box</h1>
+    <div>div</div>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+</body>
+    
+</html>

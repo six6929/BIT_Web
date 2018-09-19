@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>템플릿</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border : 1px solid black;    
+        }
+        
+        .absolute {
+            position :absolute;
+        }
+        
+        .outer {
+/*   자녀태그가 absolute 설정해서 부모태그와 연동하려면
+        1. 부모태그에 크기가 지정되어야 하고
+        2. position 속성값이 relative 설정
+     2가지 요건을 충족해야 정상 동작함     */
+            width : 500px;
+            height: 400px;
+            position :relative;
+        }
+        #div1 {
+            background-color: red;
+            left : 50px;
+            top : 50px;
+        }
+        #div2 {
+            background-color: green;
+            left : 200px;
+            bottom : 20px;
+        }
+        #div3 {
+            background-color: blue;
+            right : 20px;
+            bottom:100px;
+        }
+    </style>
+</head>
+    
+<body>
+    <h2>CSS position : absolute 부모태그와 함께</h2>
+    <div class="outer">
+        <div id="div1" class="absolute">div1</div>
+        <div id="div2" class="absolute">div2</div>
+        <div id="div3" class="absolute">div3</div>
+    </div>
+</body>
+    
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>테이블(표) 로우, 컬럼 합치기</title>
+    
+</head>
+    
+<body>
+    <h1>테이블(표) row, col 합해서 표시</h1>
+    <h3>테이블 3 x 3 형태</h3>
+    <table border="1">
+        <tr>
+            <th>row1, col1</th>
+            <th>row1, col2</th>
+            <th>row1, col3</th>
+        </tr>
+        <tr>
+            <td>row2, col1</td>
+            <td>row2, col2</td>
+            <td>row2, col3</td>
+        </tr>
+        <tr>
+            <td>row3, col1</td>
+            <td>row3, col2</td>
+            <td>row3, col3</td>
+        </tr>
+    </table>
+    
+    <h3>테이블 로우, 컬럼 합하기</h3>
+    <table border="1">
+        <tr>
+            <th>row1, col1</th>
+            <th>row1, col2</th>
+            <th>row1, col3</th>
+        </tr>
+         <tr>
+             <!-- 로우(줄) : 현재(2) + 세번째 줄(첫번째 컬럼대상) -->
+             <!-- rowspan : 로우(row)를 합하는 경우 사용 -->
+             
+            <td rowspan="2">row2, col1 + row3, col1</td>
+            <td>row2, col2</td>
+            <td>row2, col3</td>
+        </tr>
+        <tr>
+<!--             <td>row3, col1</td> -->
+            <td colspan="2">row3, col2 + row3, col3</td>
+<!--            <td>row3, col3</td> -->
+        </tr>
+        <tr>
+            <td>row4, col1</td>
+            <td>row4, col2</td>
+            <td>row4, col3</td>
+        </tr>
+    </table>
+</body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

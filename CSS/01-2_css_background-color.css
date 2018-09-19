@@ -1,0 +1,22 @@
+h1 {background-color: aquamarine; }
+h2 {background-color:darkgray}
+
+.red {background-color: palevioletred}
+.green {background-color: palegreen}
+
+#yellow {background-color: lightgoldenrodyellow}
+h3 {background-color: green}
+p {background-color: aliceblue}
+.yellow{background-color: yellow}
+
+        
+p { background-color: skyblue}
+
+#violet { background-color: violet}
+div > p {
+    background-color: coral
+}
+        
+p.green {
+     background-color: antiquewhite
+}

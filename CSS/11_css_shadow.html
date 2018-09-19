@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>CSS text-shadow</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #000;
+        }
+        h1 {
+            color : white;
+            font-size : 5em;
+        }
+        .shadow {
+            color : #000;
+            text-shadow: 0 0 4px #CCC; 
+            text-shadow: 0 0 4px #CCC, 0 -5px 4px #ff3;
+            text-shadow: 0 0 4px #CCC, 0 -5px 4px #ff3, 2px -10px 6px #fd3;
+            text-shadow: 0 0 4px #CCC, 0 -5px 4px #ff3, 2px -10px 6px #fd3, -2px -15px 11px #f80, 2px -19px 18px #f20;
+        }
+    </style>
+</head>
+    
+<body>
+    <h1>Hello World</h1>
+    <h1 class="shadow">Hello World!</h1>
+</body>
+    
+</html>

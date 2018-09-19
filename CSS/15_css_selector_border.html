@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS</title>
+<style>
+    h1, p, div {
+        color : blue;
+    }
+    div {
+        width : 100px; 
+        height : 100px;
+        border : 1px solid black;
+    }
+    
+    div div {
+        background-color: yellow;
+        border : 4px solid blue;
+    }
+    
+    body > div {
+        border : 1px dotted blue;
+    }
+    
+    body > div > div {
+        width : 50px;
+        height : 50px;
+        background-color: green;
+    }
+    
+    body > div > div > div {
+        background-color: gray;
+        width : 20px;
+        height : 20px;
+    }
+    
+    body > div > div > div:first-child {
+        background-color: aqua;
+    }
+    
+    body > div > div > div:last-child {
+        background-color: red;
+    }
+    .d2 {
+        background-color: yellowgreen;
+        border-width: 10px;
+    }
+    #d2 {
+        box-sizing: border-box;
+        background-color: gray;
+    }
+    
+    .d5 {
+        background-color: black;
+    }
+    
+    #div3 > div {
+        background-color: aquamarine;
+    }
+</style>
+</head>    
+
+<body>
+    <h1>CSS div 선택자(selector)</h1>
+    <p>div의 선택자(selector)에 따른 border색, 바탕색 지정</p>
+    <div class="d2">1</div>
+    
+    <hr>
+    <div class="d2" id="d2">2</div>
+    
+    <hr>
+    <div id ="div3">
+        <div>1</div>
+        <section>
+            <div>2</div>
+        </section>
+    </div>
+    
+    <hr>
+    <div>
+        <div>
+            <div>4</div>
+        </div>
+    </div>
+    
+    <hr>
+    <div>
+        <div>
+            <div>1</div>
+            <div class="d5">2</div>
+            <div class="d5" id="d5">3</div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

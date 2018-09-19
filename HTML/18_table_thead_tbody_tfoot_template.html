@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>테이블</title>
+    <style>
+        thead {
+            background-color: gray
+        }
+        
+        tfoot {
+            background-color: aqua    
+        }
+       
+    </style>
+    
+</head>
+    
+<body>
+    <h2>일반테이블</h2>
+    <table border="1">
+        <tr>
+            <th>header1</th>
+            <th>header2</th>
+            <th>header3</th>
+        </tr>
+        <tr>
+            <td>data2,1</td>
+            <td>data2,2</td>
+            <td>data2,3</td>
+        </tr>
+        <tr>
+            <td>data3,1</td>
+            <td>data3,2</td>
+            <td>data3,3</td>
+        </tr>
+        <tr>
+            <td>data4,1</td>
+            <td>data4,2</td>
+            <td>data4,3</td>
+        </tr>
+    </table>
+    
+     <h2>테이블 thead, tbody, tfoot</h2>
+    
+    <table border="1">
+        <colgroup>
+            <col span="2" style="background-color:yellow">
+<!--            <col style="background-color:violet">-->
+            <col style="background-color: greenyellow">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>header1</th>
+                <th>header2</th>
+                <th>header3</th>
+            </tr>
+        </thead> 
+        
+        <tbody>
+            <tr>
+                <td>data2,1</td>
+                <td>data2,2</td>
+                <td>data2,3</td>
+            </tr>
+            <tr>
+                <td>data3,1</td>
+                <td>data3,2</td>
+                <td>data3,3</td>
+            </tr>
+        </tbody> 
+        
+        <tfoot>
+            <tr>
+                <td>data4,1</td>
+                <td>data4,2</td>
+                <td>data4,3</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+</body>
+    
+</html>

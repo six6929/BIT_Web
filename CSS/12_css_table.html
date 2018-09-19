@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS</title>
+<style>
+    body {
+        margin : 10px;
+        padding : 10px;
+        border : 1px solid black;
+    }
+
+    table {
+        width : 100%;
+        caption-side: bottom;
+    }
+
+    th, td {
+        border : 1px solid black;
+    }
+    th {
+        text-align: center;
+        background-color: darkgray;
+    }
+
+    tr:nth-child(even){
+        background-color: aquamarine;
+    }
+    tr:nth-child(odd){
+        background-color: lightseagreen
+    }
+    tr:hover{
+    background-color: yellow;
+    }
+    
+    th:nth-child(1){
+        width:10%;
+    }
+    th:nth-child(2){
+        width:40%;
+    }
+    th:nth-child(3){
+        width:25%;
+    }
+
+</style>
+</head>    
+
+<body>
+    <h1>CSS table</h1>
+    <p>테이블에 CSS 적용</p>
+    <table>
+        <caption>테이블의 캡션</caption>
+        <tr>
+            <th>th 1열</th>
+            <th>th 2열</th>
+            <th>th 3열</th>
+            <th>th 4열</th>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>42</td>
+            <td>43</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+        </tr>
+        <tr>
+            <td>61</td>
+            <td>62</td>
+            <td>63</td>
+            <td>64</td>
+        </tr>
+    </table>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
