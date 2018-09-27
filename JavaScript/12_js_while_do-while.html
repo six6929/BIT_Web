@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript while, do-while</title>
+    <script>
+        //while문
+        //while(조건문) {}
+        //while문으로 1~10까지의 합 구하기
+        var num = 1; // 1~10까지 변하는 수
+        var sum = 0; // 1+2+3+...+10 누적합 저장 변수
+
+        var i = 1;
+        while (num <= 10) {
+            
+            sum += num;
+            //연산이 될 때마다 i, sum 출력
+            document.write(i + "번째 num의 값 : " + num + ", sum의 값 : " + sum,  "<br>");
+            num++;
+            i++;
+        }
+               
+        document.write("1~10까지의 합 : " + sum); //55
+        document.write("<hr>")
+        
+        num = 0;
+        sum = 0;
+        i=1;
+        do {
+            sum += num + 1;
+            //연산이 될 때마다 i, sum 출력
+            document.write(i + "번째 num의 값 : " + num + ", sum의 값 : " + sum,  "<br>");
+            num++;
+            i++;
+        } while(num < 10) 
+        document.write("1~10까지의 합 : " + sum); //55
+        document.write("<hr>")
+        //--------------------------------
+        //반복문 제어 : break, continue
+        //break: 반복문을 중단하고 빠져나감
+        //continue: 이후 실행문을 실행하지 않고 다음 반복문 진행
+        document.write("<h2>==== break, continue ====</h2>");
+        num = 1;
+        //while, for문을 이용해서 1~10까지의 숫자를 출력
+        //숫자가 5이면 출력 후 반복 종료
+        sum = 0;
+        var i = 1;
+        while (num <= 10) {
+            
+            sum += num;
+            //연산이 될 때마다 i, sum 출력
+            document.write(i + "번째 num의 값 : " + num + ", sum의 값 : " + sum,  "<br>");
+            num++;
+            i++;
+            
+            if(num == 6) {
+                break;
+            }
+
+        }
+               
+        document.write("1~10까지의 합 : " + sum); //55
+        document.write("<hr>");
+        
+        
+        //------------
+        //while, for문을 이용해서 1~10까지의 숫자를 출력
+        //숫자가 5이면 화면출력하지 않고 다음 반복 진행
+        
+        
+        num = 1;
+        sum = 0;
+        for(var m = 1; m<=10; m++) {
+            
+    
+            
+            sum += num;
+            //연산이 될 때마다 i, sum 출력
+            document.write(m + "번째 num의 값 : " + num + ", sum의 값 : " + sum,  "<br>");
+            num++;
+            
+             if(num == 5) {
+                continue;
+            }
+        }
+        document.write("1~10까지의 합 : " + sum); //55
+        document.write("<hr>");
+        
+       
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

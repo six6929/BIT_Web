@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript</title>
+    <script>
+    document.write("<h2>구구단 출력</h2>");
+    document.write("<table>");
+        document.write("<tr>")
+        for(var i=2; i<10; i++) {
+                document.write("<th>")
+                    document.write(i + "단");
+                document.write("</th>");
+        }
+        document.write("</tr>");
+        
+        for(var j=1; j<10; j++) {
+            document.write("<tr>");
+            for(var k=2; k<10; k++) {
+                document.write("<td>");
+                document.write(k + " * " + j + " = " + (k * j)+ "\t");
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+    <style>
+        table tr th {
+            background-color: gainsboro;
+        }
+        
+        table {
+            width : 100%;
+            margin: auto;
+            text-align: center;
+            border-style : dotted solid;
+        }
+        
+        tr,td,th {
+            border: 1px solid red;
+        }
+        tr:hover {
+            background-color: black;
+            color : white;
+        }
+        h2 {
+            text-align: center;
+            color : dodgerblue;
+        }
+    </style>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

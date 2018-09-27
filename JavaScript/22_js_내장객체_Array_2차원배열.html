@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript 2차원 배열</title>
+    <script>
+        //배열(Array) 2차원 배열
+        //[[],[]]
+        var arrDim2 = [["홍길동", 27, "서울"], ["강감찬", 30, "부산"]];
+        
+        document.write(arrDim2, "<br>");
+        document.write(arrDim2[0], "<br>");
+        document.write(arrDim2[0][0], "<br>"); //홍길동
+        document.write(arrDim2[0][1], "<br>"); // 27
+        document.write(arrDim2[1][0], "<br>"); // 강감찬
+        document.write("<hr>");
+        
+        //-------------------------------------------------
+        //new Array(new Array(), now Array());
+        var arrDim2_2 = new Array(new Array("홍길동", 27, "서울"), 
+                                  new Array("강감찬", 30, "부산"));
+        document.write(arrDim2, "<br>");
+        document.write(arrDim2[0], "<br>");
+        document.write(arrDim2[0][0], "<br>"); //홍길동
+        document.write(arrDim2[0][1], "<br>"); // 27
+        document.write(arrDim2[1][0], "<br>"); // 강감찬
+        document.write("<hr>");
+        
+        //--------------------------------------------------
+        //new Array();
+        //[0] = new Array();
+        //[1] = new Array();
+        var arrDim2_3 = new Array();
+        arrDim2_3[0] = new Array("홍길동", 27, "서울");
+        arrDim2_3[1] = new Array("강감찬", 30, "부산");
+        
+        document.write(arrDim2, "<br>");
+        document.write(arrDim2[0], "<br>");
+        document.write(arrDim2[0][0], "<br>"); //홍길동
+        document.write(arrDim2[0][1], "<br>"); // 27
+        document.write(arrDim2[1][0], "<br>"); // 강감찬
+        document.write("<hr>");
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>마우스 관련 이벤트</title>
+    <style>
+        #btn1 {
+            background-color: gray;
+        }
+        #btn2:hover {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+    //mouseover : 마우스가 올라왔을 때
+    //mouseout : 마우스가 벗어났을 때
+    window.onload = function() {
+        var imgbtn = document.getElementById("imgbtn");
+        imgbtn.onmouseover = function() {
+            imgbtn.firstElementChild.src = "images/btn2_yellow.png";
+        }
+        imgbtn.onmouseout = function() {
+            imgbtn.firstElementChild.src = "images/btn2_gray.png";
+        }
+    }
+    </script>
+</head>
+    
+<body>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <hr>
+    <a href="#" id="imgbtn"><img src="images/btn2_gray.png" alt="버튼"></a>
+</body>
+    
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>BOM window.setInterval</title>
+    <script>
+        //window.setInterval() : 정해진 시간마다 반복적으로 동작
+        //window.setInterval(액션, 밀리초) : 밀리초마다 액션 반복
+        //window.clearInterval(타이머객체) : 타이머객체 동작 중지
+        var i = 0;
+        var auto = setInterval("console.log(++i)", 1000);
+    </script>
+</head>
+    
+<body>
+    <button onclick="clearInterval(auto)">clearInterval 실행으로 타이머객체 중단</button>
+</body>
+    
+</html>

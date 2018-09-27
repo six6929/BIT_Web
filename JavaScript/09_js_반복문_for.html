@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript 반복문 for</title>
+    <script>
+        //반복문 : for, while, do ~ while
+        //for (초기치; 조건문; 증감문) { }
+        for (var i=1; i<=10; i++) {
+            document.write("i : " + i, "<br>");
+        }
+        //for문에서 사용한 변수 var i 변수는 전역변수(자바와 차이
+        
+        document.write("for문 종료 후 i : " + i, "<br>");
+        document.write("<hr>");
+        
+        //var 변수 선언 없이 변수 사용 가능(자바와 차이)
+        for(k=10; k<=20; k++) {
+            document.write("k : " + k, "<br>");
+        }
+        
+        document.write("for문 종료 후 k : " + k, "<br>");
+        document.write("<hr>");
+        
+        //구구단 3단 출력
+        document.write("<h2>구구단 3단 출력</h2>");
+        //(실습)
+        for(var j=1; j<10; j++) {
+            document.write("3 * " + j + " = " + 3 * j, "<br>");
+        }
+        
+        //---------------------------------------------------
+        //
+        for(j=1; j<10; j++) {
+            for(i=2; i<10; i++) {
+                document.write(i + " * " + j + " = " + (i * j)+ "\t");
+            }
+            document.write("<br>");
+        }
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

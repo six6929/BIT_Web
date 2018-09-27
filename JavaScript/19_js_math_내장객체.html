@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS Math 내장객체</title>
+<script>
+    /* Math 내장 객체
+    Math.abs(숫자) : 절대값 반환
+    Math.max(숫자1, 숫자2, ..., 숫자n) : 최대값 반환
+    Math.min(숫자1, 숫자2, ..., 숫자n) : 최소값 반환
+    Math.pow(숫자, 제곱값) : 숫자의 거듭제곱 값 반환
+    Math.random() : 0 ~ 1 사이의 난수 반환(0:포함, 1:미포함)
+    Math.ceil(숫자) : 소수점 첫째자리 기준 무조건 올림
+    Math.round(숫자) : 소수점 첫째자리 기준 반올림
+    Math.floor(숫자) : 소수점 첫째자리 기준 무조건 내림(소수점이하 삭제)
+    Math.PI : 파이의 값 반환
+    */
+    var num = 2.5234;
+    var num2 = 2.0234;
+    
+    //최대값 구하기
+    var maxNum = Math.max(10, 5, 6, 8, 100);
+    document.write("Math.max(10, 5, 6, 8, 100) : " + maxNum, "<br>");
+    
+    //최소값 구하기
+    var minNum = Math.min(10, 5, 6, 8, 100);
+    document.write("Math.min(10, 5, 6, 8, 100) : " + minNum, "<br>");
+    
+    //반올림
+    var roundNum = Math.round(num);
+    document.write("Math.round("+ num +") : " + roundNum, "<br>");
+    roundNum = Math.round(num2);
+    document.write("Math.round("+ num2 +") : " + roundNum, "<br>");
+    
+    //올림
+    var ceilNum = Math.ceil(num);
+    document.write("Math.ceil("+ num +") : " + ceilNum, "<br>");
+    ceilNum = Math.ceil(num2);
+    document.write("Math.ceil("+ num2 +") : " + ceilNum, "<br>");
+    document.write("Math.ceil(2.0) : " + Math.ceil(2.0), "<br>");
+    
+    //버림(내림)
+    var floorNum = Math.floor(num);
+    document.write("Math.floor("+ num +") : " + floorNum, "<br>");
+    floorNum = Math.floor(num2);
+    document.write("Math.floor("+ num2 +") : " + floorNum, "<br>");
+    document.write("Math.floor(2.99999999) : " + Math.floor(2.99999999), "<br>");
+    
+    //n제곱값 구하기
+    var powNum = Math.pow(2, 8);
+    document.write("Math.pow(2,8) : " + powNum, "<br>");
+    
+    //난수값 생성 : 0부터 1사이의 실수 생성
+    var ranNum = Math.random();
+    document.write("Math.random(): " + ranNum, "<br>");
+    document.write("<hr>");
+    
+    for (var i=0; i<100; i++) {
+        ranNum = Math.floor(Math.random() * 10);
+        document.write("Math.floor(Math.random() * 10): " + ranNum, "<br>");
+    }
+    
+</script>
+</head>    
+
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

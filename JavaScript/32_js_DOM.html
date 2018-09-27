@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM 선택자 id, class, tag</title>
+<style>
+    ol { background-color: blueviolet; }
+</style>
+<script>
+    /* DOM 선택자
+    //선택자 종류 : 직접선택자, 인접관계 선택자
+    <직접선택자>
+    document.getElementById('아이디명') : id속성에 해당하는 요소 리턴
+    document.getElementsByClassName('클래스명') : class속성에 해당하는 요소들 리턴(배열형태)
+    document.getElementsByTagName('태그명') : 태그명에 해당하는 요소들 리턴(배열형태)
+    
+    
+    document.querySelector("선택자") : 선택자에 해당하는 첫번째 요소 리턴
+    document.querySelectorAll("선택자") : 선택자에 해당하는 모든 요소 리턴(배열형태) 
+    
+    */
+</script>
+<script>
+    //브라우저에 문서로 로딩되면
+    window.onload = function() {
+        //getElementsByTagName : 배열리턴 / tag검색
+        document.getElementsByTagName("h1")[0].style.color = "green";
+        //getElementById : id검색
+        document.getElementById("title").style.color = "red";
+        
+        //체이닝 방식으로 연속적용
+        var foodlist = document.getElementById("food_1")
+                               .getElementsByTagName("li")[1];
+        foodlist.style.backgroundColor = "blue";
+        foodlist.style.color = "red";
+        
+        var div1 = document.getElementById("food_1");
+        div1.style.backgroundColor = "yellow";
+        
+        var list = div1.getElementsByTagName("li");
+        list[2].style.backgroundColor = "orange";
+        
+        //--------------------------------------------------
+        //클래스명으로 찾고 스타일 적용
+        var clFoodlist = document.getElementsByClassName("foodlist"); //배열 리턴
+        //배열 리턴
+        clFoodlist[0].style.backgroundColor = "aqua";
+        clFoodlist[1].style.backgroundColor = "aqua";
+        
+        //------------------------------------------------
+        //선택자로 찾은 첫번째 요소
+        var sel = document.querySelector("div > h2");
+        sel.style.backgroundColor = "orange";
+        
+        //선택자로 찾은 모든 요소 : 배열형태
+        var sels = document.querySelectorAll("div > h2");
+        sels[1].style.border = "2px solid black";
+    };
+</script>
+</head>    
+
+<body>
+    <h1>좋아하는 음식</h1>
+    <h2>한식, 중식</h2>
+    <div id="food_1">
+        <h2 id="title">한식</h2>
+        <ol class="foodlist">
+            <li id="kimchi">
+                <a href="#">김치</a>
+            </li>
+            <li id="li2">불고기</li>
+            <li>비빔밥</li>
+        </ol>
+    </div>
+    <div id="food_2">
+        <h2>양식</h2>
+        <ol class="foodlist">
+            <li>돈까스</li>
+            <li>파스타</li>
+        </ol>
+    </div>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

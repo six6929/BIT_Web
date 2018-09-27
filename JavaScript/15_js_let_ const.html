@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript let, const</title>
+    <script>
+        for (var i=1; i<=3; i++) {
+            document.write("i : " + i, "<br>");
+        }
+        document.write("for문 밖 i : " + i, "<br>");
+        
+        //let 선언을 통해 만들어진 변수는 local변수
+        //자바에서 변수사용되는 것과 동일한 범위를 가짐
+        for(let k=1; k<=3; k++) {
+            document.write("k : " + k, "<br>");
+        }
+//        document.write("for문 밖 k : " + k, "<br>");
+        document.write("<hr>");
+        
+        //const : 상수화된 변수 (자바의 final 선언과 동일)
+        const CONST_VAR = "const 변수는 처음 한 번만 값 설정 가능";
+        document.write("CONST_VAR : " + CONST_VAR, "<br>");
+        
+        document.write(">>> CONST_VAR에 값 재설정 시도", "<br>");
+        CONST_VAR = "const 변수 값 재 설정"
+        
+        
+        document.write("==== JS 끝");
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

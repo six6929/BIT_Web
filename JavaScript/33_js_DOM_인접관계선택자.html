@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>DOM 인접관계선택자</title>
+    <script>
+    /* 
+    인접관계 선택자
+    parentNode : 부모노드 선택
+    childNodes : 모든 자식 노드들 선택(배열형태)
+    children : 자식만 선택(배열형태)
+    firstChild : 첫번째 자식 선택
+    previousSibling : 이전 형제 선택(태그, 태그이외 노드 포함)
+    previousElementSibling : 이전 형제 요소(태그만)
+    nextElementsSibling : 다음 형제 요소(태그만)
+    */
+    </script>
+    <script>
+        window.onload = function() {
+            //firstChild를 쓸 경우 div다음 줄바꿈을 한 태그를 인식하기 때문에 오류가 난다
+            //브라우저마다 경우가 다르다.
+            //(주의할 것) 태그내에 빈칸,리턴,탭 등이 있는 경우 모두 child로 인식(특히 크롬)
+            //var child1 = document.getElementById("div1").firstChild;
+            var child1 = document.getElementById("div1").firstElementChild;
+            child1.style.color = "red";
+            child1.innerHTML = "내용1 - 변경";
+            
+            //----------------------------------------
+            //p태그 중 두번째 p태그
+            var p2 = document.getElementsByTagName("p")[1];
+            p2.style.backgroundColor = "green";
+            
+            //p2(내용2) 기준으로 동일레벨에서 다음(next) 태그
+            p2.nextElementSibling.style.backgroundColor = "yellow";
+            
+            //p2 기준으로 동일레벨에서 이전(previous) 태그
+            p2.previousElementSibling.style.backgroundColor = "aquamarine";
+            
+            //-------------------------------------------
+            var div = document.getElementById("div1");
+            //속성값 조회 : getAttribute("속성명");
+            alert(div.getAttribute("id"));
+            
+            //속성값 변경 : setAttribute("속성명", "값");
+            alert(div.setAttribute("title", "변경된 title"));
+            };
+
+    </script>
+</head>
+    
+<body>
+    <div id ="div1" title="내용묶음div">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+</body>
+    
+</html>

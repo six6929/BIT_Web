@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript</title>
+    <script>
+        //function은 중복선언시 마지막에 선언된 함수 사용
+        //파라미터(매개변수)가 선언되었는데, 값을 받지 못하면 undefined 가짐
+        //자바의 오버로딩 개념이 없음
+        function test() {
+            document.write("test() 함수 실행", "<br>");
+        }
+        test(); //test() 함수 호출(실행)
+        
+        function test() {
+            document.write(">> test() 함수 재정의 실행", "<br>");
+        }
+        
+        function test(param) {
+            document.write(">> test() 함수 재정의 실행" + param, "<br>");
+        }
+        test("파라미터!!!");
+        //파라미터(매개변수) 하나만 선언된 경우 순서대로
+        test("param1", "param2");
+        document.write("<hr>");
+       
+        //-----------------------------------------
+        //function에서 값을 리턴 받을 때 return 키워드 사용
+        //return 값;
+        function plus(a, b) {
+            return a + b;
+        }
+        var sum = plus(100, 200);
+        document.write("plus(100,200) : " + sum, "<br>");
+        
+        var sum2 = sum + plus(100, 200);
+        document.write("sum + plus(100, 200) : " + sum2, "<br>");
+        
+        document.write("<hr>");
+        //----------------------------------------------------
+        //자동실행 함수 정의 사용
+        //매개변수(파라미터)가 없는 경우 : (function(){})();
+        //매개변수(파라미터)가 있는 경우 : (function(매개변수){})(매개변수값);
+        //파라미터가 없는 경우
+        (function() {
+            document.write("<p>자동실행함수 실행문 - 안녕하세요!!</p>")
+        })();
+        
+        //파라미터가 있는 경우
+        
+        (function(name) {
+            document.write("<p>", name + "님 반갑습니다~~~","</p>")
+        })("홍길동");
+        
+        
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

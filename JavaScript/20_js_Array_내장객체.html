@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript Array 내장객체</title>
+    <script>
+        /* 배열(Array)
+        Array 생성 방법 3가지
+        1. var arr1 = new Array();
+        2. var arr2 = new Array("홍길동", 27, true);
+        3. var arr3 = ["홍길동", 27, true];
+        */
+        
+        //1. var arr1 = new Array();
+        var arr1 = new Array();
+        arr1[0] = "홍길동";
+        arr1[1] = 27;
+        arr1[2] = true;
+        document.write("var arr1 = new Array() : " + arr1, "<br>");
+        document.write("arr1[0] : " + arr1[0], "<br>");
+        document.write("arr1[1] : " + arr1[1], "<br>");
+        document.write("arr1[2] : " + arr1[2], "<br>");
+        document.write("<hr>");
+        
+        //2. var arr2 = new Array("홍길동", 27, true);
+        //자바의 생성자처럼 사용
+        var arr2 = new Array("홍길동", 27, true);
+        document.write('배열객체 생성 var arr2 = new Array("홍길동", 27, true)", "<br>');
+        document.write("arr2[0] : " + arr2[0], "<br>");
+        document.write("arr2[1] : " + arr2[1], "<br>");
+        document.write("arr2[2] : " + arr2[2], "<br>");
+        
+        
+        //var arr3 = ("홍길동", 27, true);
+        //값을 입력과 동시에 배열 객체 생성
+        var arr3 = ["홍길동", 27, true];
+        document.write('배열객체 생성 var arr3 = ["홍길동", 27, true]', "<br>");
+        document.write("arr3[0] : " + arr3[0], "<br>");
+        document.write("arr3[1] : " + arr3[1], "<br>");
+        document.write("arr3[2] : " + arr3[2], "<br>");
+        document.write("<hr>");
+        
+        //------------------------------------------
+        //배열객체의 값을 추출하기 위한 반복문 처리
+        //일반 for문
+        for(var i=0; i<arr3.length; i++) {
+            document.write("index : " + i, "<br>");
+            document.write("arr3["+ i + "] : " + arr3[i], "<br>");
+        }
+        document.write("<hr>");
+        //foreach문 형태의 for문
+        for (var idx in arr3) {
+            document.write("var idx : " + idx, "<br>")
+            document.write("arr3["+ idx + "] : " + arr3[idx], "<br>");
+        }
+        document.write("<hr>");
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

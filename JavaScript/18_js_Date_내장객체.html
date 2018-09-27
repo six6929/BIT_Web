@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript</title>
+    <script>
+       
+    function hr() {
+        document.write("<hr>");
+    }
+
+    </script>
+    <script>
+        /* 내장객체 Date
+        getFullYear() : 년도 4자리
+        getMonth() : 월(0~11), 0:1월, 11:12월
+        getDate() : 일
+        getDay() : 요일(0:일 ~ 6:토)
+        getHours() : 시간
+        getMinutes() : 분
+        getSeconds() : 초
+        
+        getMilliseconds() : 밀리초 1/1000초 단위
+        getTime() : 1970년 1월 1일부터 경과된 시간(밀리초)
+        */
+        
+        /* Date 객체를 생성하는 방법 4가지
+        new Date();
+        new Date(milliseconds);
+        new Date(datestring) : "2018/09/21 12:27:30"
+        new Date(year, month, date, hours, minutes, seconds, milliseconds);
+        */
+        //Date 객체 생성
+        var dt = new Date();
+        document.write("new Date() : " + dt, "<br>");
+        
+        //년월일 구하기
+        var yyyy = dt.getFullYear();
+        var mm = dt.getMonth();
+        var dd = dt.getDate();
+        var yyyymmdd = yyyy + "/" + mm + "/" + dd;
+        document.write("yyyymmdd : " + yyyymmdd, "<br>");
+        
+        //시분초 구하기
+        var hh = dt.getHours();
+        var mi = dt.getMinutes();
+        var ss = dt.getSeconds();
+        var hhmiss = hh + ":" + mi + ":" + ss;
+        document.write("hhmiss : " + hhmiss, "<br>");
+        hr();
+        
+        //-------------------------------------------------------
+        //초 미만 값 : 밀리초 (1/1000초 단위)
+        var millisec = dt.getMilliseconds();
+        document.write("millisec : " + millisec, "<br>");
+        
+        //1초 : 밀리초단위 1000
+        //1분 : 60초 * 1000
+        //1시간 : 60분 * (60초 * 1000)
+        //하루 : 24시간 * 60분 * 60초 * 1000
+        var time = dt.getTime();
+        document.write("dt.getTime() : " + time, "<br>");
+        
+        //1970년 1월 1일부터 지난 일수 구하기
+        var days = time / (24 * 60 * 60 * 1000);
+        document.write("1970년 1월 1일부터 지난 일수 구하기 : " + days, "<br>");
+        hr();
+        
+        //------------------------------------------
+        /* 날짜값 조성
+        setFullYear() : 년도 4자리
+        setMonth() : 월(0~11), 0:1월, 11:12월
+        setDate() : 일
+        setDay() : 요일(0:일 ~ 6:토)
+        setHours() : 시간
+        setMinutes() : 분
+        setSeconds() : 초
+        
+        setDay() : 요일
+        setMilliseconds() : 밀리초 설정
+        setTime() : 밀리초 단위 값으로 설정
+        */
+        
+        var dt1 = new Date();
+        var dt2 = new Date(2018, 7, 21); // 9월 20일
+        var diffDate = dt1 - dt2;
+        document.write("2018/9/21 - 2018/8/21 : " + diffDate, "<br>");
+        
+        //일수로 환산
+        var durDays = diffDate / (24 * 60 * 60 * 1000);
+        document.write("2018/9/21 - 2018/8/21 차이 일수 : " + durDays, "<br>");
+        
+        //날짜 변경
+        dt2.setMonth(6-1); //6월
+        dt2.setDate(10);
+        document.write("dt2 : " + dt2, "<br>");
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

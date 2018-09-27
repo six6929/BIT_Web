@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>BOM window setTimeout</title>
+    <script>
+        //window.setTimeout() : 정해진 시간에 한 번만 동작
+        //setTimeout(액션,밀리초) : 밀리초가 지난 후 액션이 실행됨
+        //window.clearTimeout(타이머객체) : 타이머객체 동작 중지
+        var i = 0;
+        var timeout = setTimeout("console.log('5초 뒤에 출력 : '+ ++i)", 5*1000);
+    </script>
+</head>
+    
+<body>
+    <button>clearTimeout() 정지버튼</button>
+</body>
+    
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript : alert, prompt, confirm</title>
+    <script>
+        //alert : 브라우저 창에 메시지 표시
+        window.alert("자바스크립트 진행중~~~");
+        alert("window.alert에서 window 생략가능");
+        
+        //----------------------------------------
+        //prompt : 메시지 창으로부터 값을 입력 받을 때 사용
+        var input = prompt("이름을 입력하세요", "무명");
+        alert("입력한 값 : " + input);
+        
+        //prompt를 통해 입력하는 값은 모두 문자열 처리
+        var num = prompt("숫자를 입력하세요", "100");
+        num = num + 100;
+        alert("입력한 숫자 : " + num);
+        
+        //문자열 ---> 숫자형으로 변경 처리
+        num = "100";
+//        num = num * 1; 숫자형으로 변환
+        num = parseInt(num); //숫자(정수) 타입으로 변환
+//        num = Number(num); // 숫자형타입으로 변환
+        num = num + 100;
+        alert("숫자형 변경결과 값 : " + num);
+        
+        //-----------------------------------
+        //confirm : 메시지 창을 띄우고 사용자의 의견 묻기
+        var answer = confirm("당신은 여자입니까?");
+        alert("답변결과 : " + answer); //확인 : true, 취소 : false
+        if(answer) {
+            alert("데이터가 삭제처리 되었습니다.");
+        } else {
+            alert("삭제작업을 취소했습니다.");
+        }
+    </script>
+</head>
+    
+<body>
+    <h1>자바스크립트 수업중</h1>
+</body>
+    
+</html>

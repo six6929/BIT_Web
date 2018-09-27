@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript this</title>
+    <script>
+    //this : 현재 객체
+        document.write("<h2>this는 현재객체, 기본 window</h2>");
+        document.write("window == this : " + (window == this), "<br>");
+        document.write("window === this : " + (window === this), "<br>");
+		document.write("<hr>");
+        
+        //---------------------------------------------
+        var a = 100;
+        document.write("var a = 100인 경우 >>> ", "<br>");
+        document.write("a : " + a, "<br>");
+        document.write("this.a : " + this.a, "<br>");
+        document.write("window.a : " + window.a, "<br>");
+        document.write("<hr>");
+        
+        //------------------------------------------------
+        //window가 아닌 다른 객체 내부에서 사용된 this는 해당 객체를 의미
+        var obj = {
+            a : "aaaaa",
+            b : function() {
+                return this.a; //this 사용
+            },
+            c : function() {
+                return a;
+            }
+        };
+        document.write("obj.a : " + obj.a, "<br>");
+        document.write("obj.b() : " + obj.b(), "<br>");
+        //객체 내부에서 this를 사용하지 않은 것은 window 객체에 소속된 것을 의미
+        document.write("obj.c() : " + obj.c(), "<br>");
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

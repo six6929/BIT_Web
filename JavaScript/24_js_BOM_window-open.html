@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript BOM window</title>
+    <script>
+    /* BOM : Browser Object Model
+    window 객체 최상위 객체 : 작성하는 모든 변수, 함수를 가짐
+    메소드 : open(), close()
+    open() : 새 창을 열 때 사용
+    close() : 창을 닫을 때 사용
+    
+    open(URL, 명칭, 출력형태옵션 등)
+    <출력형태옵션>
+    width, height, top, left : 크기, 위치 지정(픽셀)
+    location : 주소입력창 유무 (yes, no, 1, 0)
+    menubar : 메뉴바 유무(yes,no,1,0)
+    resizable : 화면 크기 조절 가능 여부 (yes, no, 1, 0)
+    status : 상태 표시줄 유무(yes, no, 1, 0)
+    toobar : 툴바 유무(yes, no, 1, 0)
+    scrollbar : 스크롤바 유무(yes, no, 1, 0)
+    */
+        
+    function windowOpen() {
+        pop = window.open("http://www.naver.com", "pop1", "width=300", "height=250, left=150, top=100");
+    }
+    
+    function windowOpen_coffee() {
+        coffee = window.open("24_js_BOM_window-close.html", "coffee", "width = 300", "height = 250", "left = 150", "top = 100");
+    }
+    </script>
+</head>
+    
+<body>
+    <h2>BOM window.open</h2>
+    <button onclick="windowOpen()">NAVER 창 열기</button>
+    <button onclick="windowOpen_coffee()">커피 한 잔</button>
+</body>
+    
+</html>

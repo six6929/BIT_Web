@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript</title>
+    <script>
+        //익명함수 : 함수 선언시에 이름이 정의되지 않은 함수
+        //function (매개변수) {}
+        var str = "전역변수str";
+        var fn = function(param) {
+            document.write("익명함수 호출-매개변수값 : " + param, "<br>");
+        };
+        document.write("<h2>익명함수 호출</h2>");
+        fn(str);
+        
+        //-------------------------------------------------------------
+        //파라미터 값(인수)으로 함수를 전달하고, 전달받은 함수를 호출
+        //param 매개변수에 함수가 전달될 예정
+        var fn2 = function (param) {
+            param("안녕하세요~~나는 콜백 함수라고 해요"); // 함수를 가지고 있는 param변수
+        };
+        
+        fn2(function(msg) {
+            document.write("<h2>" + msg + "</h2>")
+        });
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

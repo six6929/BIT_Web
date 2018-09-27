@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript object</title>
+    <script>
+        var str = null;
+        document.write("typeof str : " + typeof str, "<br>");
+        
+        //object : 객체 사용법
+        //객체 선언 및 사용
+        var tv = new Object(); //Object 타임의 객체 생성
+        
+        //객체의 속성, 메소드선언(자바 : 필드변수, 메소드 생성)
+        tv.width = 1500; //width 속성 만들고, 값 설정
+        tv.height = 700;
+        tv.color = "black";
+        tv.weight = "20kg";
+        tv.on = function() {
+            document.write("TV전원 On!!<br>");
+        };
+        tv.off = function() {
+            document.write("TV전원 Off!!<br>");
+        };
+        
+        //객체의 사용
+        document.write("<hr>");
+        document.write("tv.width : " + tv.width, "<br>");
+        document.write("tv.height : " + tv.height, "<br>");
+        document.write("tv.color : " + tv.color, "<br>");
+        tv.on();
+        tv.off();
+        document.write("TV사용 종료<br>");
+        document.write("<hr>");
+        
+        //------------------------------------------------------
+        //객체 선언방법2
+        //{키 : 값, 키 : 값, 키:값 ....}
+        var tv2 = {
+            width : 1100,
+            height : 710,
+            color : "검정",
+            weight : "30kg",
+            on : function() {
+            document.write("TV전원 On!!<br>");
+            },
+            off : function() {
+            document.write("TV전원 Off!!<br>");
+            }
+        };
+        
+        //객체 사용
+        document.write("<hr>");
+        document.write("tv2.width : " + tv.width, "<br>");
+        document.write("tv2.height : " + tv.height, "<br>");
+        document.write("tv2.color : " + tv.color, "<br>");
+        tv2.on();
+        tv2.off();
+        document.write("TV2사용 종료<br>");
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

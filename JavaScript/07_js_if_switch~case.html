@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript</title>
+    <script>
+        //if(논리연산) {}
+        //if(논리연산) {} else {}
+        //if(논리연산) {} else if () {} else {}
+        if(true) {
+            document.write("if문이 true인 경우 출력","<br>");
+        } 
+        if (false) {
+            document.write("if문이 false인 경우 출력", "<br>");
+        }
+        document.write("<hr>");
+        
+        var bool = confirm("true 출력 <확인>선택, false출력 <취소> 선택");
+        if(bool) {
+            document.write("bool true일 때 - 입력값 : " + bool, "<br>");
+        } else {
+            document.write("bool false일 때 - 입력값 : " + bool, "<br>");
+        }
+        document.write("<hr>");
+        
+        //-----------------------------------------------------
+        //성적을 입력받고 점수에 따라 평가결과 화면 표시
+        //90 이상 : A, 80이상 : B, 70이상, C, 60이상 D, 60미만 F
+        //(실습)
+        var score = prompt("점수를 입력하세요.", "100");
+        
+        if(score >= 90) {
+            document.write(score + "점에 대한 학점은 A", "<br>");
+        } else if(score >= 80) {
+            document.write(score + "점에 대한 학점은 B", "<br>");
+        } else if (score >= 70) {
+            document.write(score + "점에 대한 학점은 C", "<br>");
+        } else if (score >= 60) {
+            document.write(score + "점에 대한 학점은 D", "<br>");
+        } else {
+            document.write(score + "점에 대한 학점은 F", "<br>");
+        }
+        
+        //------------------------------------------------------
+        //switch~case
+        score = Math.floor(score / 10);
+        document.write("score : " + score,"<br>");
+        switch (score) {
+            case 10 :
+                document.write("A학점", "<br>");
+                break;
+            case 9 :
+                document.write("A학점", "<br>");
+                break;
+            case 8 :
+                document.write("B학점", "<br>");
+                break;
+            case 7 :
+                document.write("C학점", "<br>");
+                break;
+            case 6 :
+                document.write("D학점", "<br>");
+                break;
+            default :
+                document.write("F학점", "<br>");
+                break;
+        }
+    </script>
+</head>
+    
+<body>
+    
+</body>
+    
+</html>

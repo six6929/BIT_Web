@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>(실습) 로또만들기</title>
+    <style>
+        #div1 {
+            width : 50px;
+            height : 50px;
+            background-color: red;
+            border-radius: 100px;
+            text-align: center;
+            float: left;
+            line-height: 50px;
+            font-size: 150%;
+        }
+        
+        #div2 {
+            width : 50px;
+            height : 50px;
+            background-color: pink;
+            border-radius: 100px;
+            text-align: center;
+            float: left;
+            line-height: 50px;
+            font-size: 150%;
+        }
+        
+        #div3 {
+            width : 50px;
+            height : 50px;
+            background-color: yellow;
+            border-radius: 100px;
+            text-align: center;
+            float: left;
+            line-height: 50px;
+            font-size: 150%;
+        }
+        
+        #div4 {
+            width : 50px;
+            height : 50px;
+            background-color: green;
+            border-radius: 100px;
+            text-align: center;
+            float: left;
+            line-height: 50px;
+            font-size: 150%;
+        }
+        
+        #div5 {
+            width : 50px;
+            height : 50px;
+            background-color: blue;
+            border-radius: 100px;
+            text-align: center;
+            float: left;
+            line-height: 50px;
+            font-size: 150%;
+        }
+        
+        #div0 {
+            width : 50px;
+            height : 50px;
+            background-color: purple;
+            border-radius: 100px;
+            text-align: center;
+            float: left;
+            line-height: 50px;
+            font-size: 150%;
+        }
+    </style>
+<script>
+    //로또만들기
+    document.write("<h2>로또만들기</h2>");
+        document.write("<p>1~45까지의 숫자 중 6개를 추출해서 로또만들기</p>");
+        document.write("<p>배열(Array), Math.random() 사용해서 처리</p>");
+        //로또만들기
+        var num = 0;
+        var temp = 0;
+        
+//        num = Math.floor(Math.random() * 45);
+//        document.write(num)
+        
+        var lottoArr = new Array(45);
+        
+        for(var i=0; i<lottoArr.length; i++) {
+            lottoArr[i] = i+1;
+        }
+        
+        
+        document.write("<h2> 로또당첨번호 </h2>");
+        for(var i=0; i<10000; i++) {
+            num = Math.floor(Math.random() * 45);
+            temp = lottoArr[0];
+            lottoArr[0] = lottoArr[num];
+            lottoArr[num] = temp;
+        }
+        
+       
+        for(var i=0; i<6; i++) {
+            document.write(lottoArr[i]+ "\t");
+        }
+        document.write("<br>");
+    
+        document.write("<h2> 로또당첨번호 </h2>");
+//        document.write('<div id = "div0">');
+//        document.write(lottoArr[0]);
+//        document.write("</div>");
+//
+//        document.write('<div id = "div1">');
+//        document.write(lottoArr[1]);
+//        document.write("</div>");
+//    
+//        document.write('<div id = "div2">');
+//        document.write(lottoArr[2]);
+//        document.write("</div>");
+//    
+//        document.write('<div id = "div3">');
+//        document.write(lottoArr[3]);
+//        document.write("</div>");
+//    
+//        document.write('<div id = "div4">');
+//        document.write(lottoArr[4]);
+//        document.write("</div>");
+//    
+//        document.write('<div id = "div5">');
+//        document.write(lottoArr[5]);
+//        document.write("</div>");
+    
+        for(var i=0; i<6; i++) {
+            document.write('<div id = "div' + i + '">');
+            document.write(lottoArr[i]);
+            document.write("</div>");
+        }
+    
+</script>
+</head>    
+
+<body>
+<!--
+    <h2>로또번호(위의 이미지처럼)</h2>
+        <div id = "div0"></div>
+        <div id = "div1"></div>
+        <div id = "div2"></div>
+        <div id = "div3"></div>
+        <div id = "div4"></div>
+        <div id = "div5"></div>
+-->
+        
+<!--
+        <script>
+        document.getElementById("div0").innerHTML = lottoArr[0];
+        document.getElementById("div1").innerHTML = lottoArr[1];
+        document.getElementById("div2").innerHTML = lottoArr[2];
+        document.getElementById("div3").innerHTML = lottoArr[3];
+        document.getElementById("div4").innerHTML = lottoArr[4];
+        document.getElementById("div5").innerHTML = lottoArr[5];
+        </script>
+-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

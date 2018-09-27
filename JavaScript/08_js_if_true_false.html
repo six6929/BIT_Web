@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS true, false</title>
+<script>
+    //true, false
+    //false값 : false, 0, undefined, NaN
+    //true값 : false값이 아닌 값
+    document.write("<h2>false값 : false, 0, undefined, NaN</h2>");
+    if (false) {
+        document.write("if 구문 : false는 true", "<br>");
+    } else {
+        document.write("else 구문 : false는 false", "<br>");
+    }
+    if (0) {
+        document.write("if 구문 : 0은 true", "<br>");
+    } else {
+        document.write("else 구문 : 0은 false", "<br>");
+    }
+    
+    var num;
+    alert("num : " + num);
+    alert("num > 100: " + (num > 100));
+    if (undefined) {
+        document.write("if 구문 : undefined은 true", "<br>");
+    } else {
+        document.write("else 구문 : undefined은 false", "<br>");
+    }
+    
+    var nan = "a" - 5;
+    alert('"a" - 5 : ' + nan);
+    alert('("a" - 5) > 10 : ' + (nan > 10));
+    if (NaN) {
+        document.write("if 구문 : NaN은 true", "<br>");
+    } else {
+        document.write("else 구문 : NaN은 false", "<br>");
+    }
+    document.write("<hr>");
+    
+    //---------------------------------------------
+    //true : false, 0, undefined, NaN 가 아닌 모든 값
+    document.write("<h2>true : false, 0, undefined, NaN 가 아닌 모든 값</h2>");
+    if (1) {
+        document.write("1은 true", "<br>");
+    } else {
+        document.write("1은 false", "<br>");
+    }
+    if (2) document.write("2는 true", "<br>")
+    else document.write("2는 false", "<br>");
+    
+    if (100) document.write("100도 true", "<br>")
+    else document.write("100은 false", "<br>");
+    
+    if ("test") document.write('"test"도 true', "<br>")
+    else document.write('"test"는 false', "<br>");
+    if("asdfas~~")document.write('"asdfas~~"도 true', "<br>")
+    else document.write('"asdfas~~"는 true', "<br>");
+    
+    document.write("<hr>");
+    //------------------------------------------------------
+    var infinity = 1 / 0;
+    document.write("1 / 0 의 연산결과 : " + infinity,"<br>");
+    if ("infinity") document.write('"infinity"도 true', "<br>")
+    else document.write('"infinity"는 false', "<br>");
+    document.write("<br><br><br><br><br><br><br><br><br>"+"")
+</script>
+</head>    
+
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

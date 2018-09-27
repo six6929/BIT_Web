@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript (실습) 로또 만들기</title>
+    <script>
+        document.write("<h2>로또만들기</h2>");
+        document.write("<p>1~45까지의 숫자 중 6개를 추출해서 로또만들기</p>");
+        document.write("<p>배열(Array), Math.random() 사용해서 처리</p>");
+        //로또만들기
+        var num = 0;
+        var temp = 0;
+        
+//        num = Math.floor(Math.random() * 45);
+//        document.write(num)
+        
+        var lottoArr = new Array(45);
+        
+        for(var i=0; i<lottoArr.length; i++) {
+            lottoArr[i] = i+1;
+        }
+        
+        
+        document.write("<h3> 로또당첨번호 </h3>");
+        for(var i=0; i<10000; i++) {
+            num = Math.floor(Math.random() * 45);
+            temp = lottoArr[0];
+            lottoArr[0] = lottoArr[num];
+            lottoArr[num] = temp;
+        }
+        
+       
+        for(var i=0; i<6; i++) {
+            document.write(lottoArr[i]+ "\t");
+        }
+        document.write("<br>");
+       
+    </script>
+</head>
+    
+<body>
+<!--
+    <h2>로또만들기</h2>
+    <p>1~45까지의 숫자 중 6개를 추출해서 로또만들기</p>
+    <p>배열(Array), Math.random() 사용해서 처리</p>
+-->
+</body>
+    
+</html>
