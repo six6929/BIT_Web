@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JavaScript</title>
+    <style>
+        #terms {
+            width : 470px;
+            height: 100px;
+            border : 1px solid black;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.frm1.onsubmit = function() {
+                var pw1 = document.frm1.user_pw1;
+                var pw2 = document.frm1.user_pw2;
+                pw2.value = pw1.value;
+                pw2.disabled = true; // true처리하면 더이상입력불가상태
+                return false; // submit 처리 하지 않음. 서버로 전송 안함
+            };
+            
+            //두번째 폼의 submit 버튼이 눌렸을 때 
+            document.frm2.onsubmit = function() {
+                var accept = document.frm2.accept;
+                if(accept.checked == false) {
+                    alert("약관에 동의해야 합니다.");
+                    accept.focus();
+                    return false;
+                }
+            }
+            
+            //전체선택
+            document.frm2.AllChk.onclick = function() {
+                //this : 현재 이벤트가 발생한 객체
+                if(this.checked) {
+                    document.frm2.subject1.checked = true;
+                    document.frm2.subject2.checked = true;
+                    document.frm2.subject3.checked = true;
+                } else {
+                    document.frm2.subject1.checked = false;
+                    document.frm2.subject2.checked = false;
+                    document.frm2.subject3.checked = false;
+                }
+            }
+        };
+    </script>
+</head>
+    
+<body>
+    <form action="#" name="frm1">
+        <fieldset>
+            <legend>폼 요소1(비밀번호 확인)</legend>
+            <p>
+                <label for="user_pw1">비밀번호</label> 
+                <input type="password" name="user_pw1" id="user_pw1"><br>
+            </p>  
+            <p>
+                <label for="user_pw2">비밀번호 확인</label> 
+                <input type="password" name="user_pw2" id="user_pw2"> 
+                <input type="submit" value="확인"> 
+            </p>
+        </fieldset>
+    </form>
+    <form action="#" name="frm2">
+        <fieldset>
+            <legend>폼 요소2(약관동의 과목 선택></legend>
+            <div id="terms" name="txt">
+                회사는 법령에 따라서 ..... ~~~~~ 개인정보를 안전하게 관리한다.
+                회사는 법령에 따라서 ..... ~~~~~ 개인정보를 안전하게 관리한다.
+                회사는 법령에 따라서 ..... ~~~~~ 개인정보를 안전하게 관리한다.
+                회사는 법령에 따라서 ..... ~~~~~ 개인정보를 안전하게 관리한다.
+                회사는 법령에 따라서 ..... ~~~~~ 개인정보를 안전하게 관리한다.
+                회사는 법령에 따라서 ..... ~~~~~ 개인정보를 안전
+                하게 관리한다.
+            </div>
+            <p>
+               <input type="checkbox" name="accept" id="accept">
+                <label for="accept">약관 동의합니다</label>
+            </p>
+            <p>
+                <input type="checkbox" name="AllChk" id="id_AllChk">
+                <label for="id_AllChk">전체선택</label>
+      
+                <input type="checkbox" name="subject1" id="subject1" value="s1">
+                <label for="subject1"> 과목1 </label>   
+              
+                <input type="checkbox" name="subject2" id="subject2" value="s2">
+                <label for="subject2"> 과목2 </label>
+              
+                <input type="checkbox" name="subject3" id="subject3" value="s3">
+                <label for="subject3"> 과목3 </label>
+            </p>
+            <p>
+                <input type="submit" value="등록">
+                <input type="reset" value="취소">
+            </p>        
+        </fieldset>
+    </form>
+</body>
+    
+</html>

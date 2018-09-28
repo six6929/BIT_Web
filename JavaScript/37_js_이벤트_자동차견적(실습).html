@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>JS 자동차견적(실습)</title>
+    <style>
+        * {
+            margin : 0;
+            padding: 0;
+        }
+        body {
+            width : 70%;
+            margin :auto;
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+        }
+    
+        img {
+            margin: auto;
+            width : 100%;
+        }
+        #car {
+            text-align: center;
+            margin-left: auto;
+            width : 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border : 1px solid darkgray;
+        }
+    
+        thead, tfoot th:first-child {
+            background-color: darkgray;
+        }
+        
+        #total {
+            border-style: none;
+            text-align: center;
+            font-size: 120%;
+            font-weight:bold;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            
+            document.getElementById("opt1").onclick = function() {
+                var tot = document.getElementById("total");
+                var totNum = parseInt(tot.value);
+
+                var opt = document.getElementById("opt1");
+                if(opt.checked == true) {
+                    totNum += parseInt(opt.value);
+                }
+                tot.value = totNum;
+                if(opt.checked == false) {
+                    totNum -= parseInt(opt.value);
+                }
+                tot.value = totNum;
+            }
+            
+            document.getElementById("opt2").onclick = function() {
+                var tot = document.getElementById("total");
+                var totNum = parseInt(tot.value);
+
+                var opt = document.getElementById("opt2");
+                if(opt.checked == true) {
+                    totNum += parseInt(opt.value);
+                }
+                tot.value = totNum;
+                if(opt.checked == false) {
+                    totNum -= parseInt(opt.value);
+                }
+                tot.value = totNum;
+            }
+            
+            document.getElementById("opt3").onclick = function() {
+                var tot = document.getElementById("total");
+                var totNum = parseInt(tot.value);
+
+                var opt = document.getElementById("opt3");
+                if(opt.checked == true) {
+                    totNum += parseInt(opt.value);
+                }
+                tot.value = totNum;
+                if(opt.checked == false) {
+                    totNum -= parseInt(opt.value);
+                }
+                tot.value = totNum;
+            }
+        };
+        
+        
+    </script>
+</head>
+    
+<body>
+    <h1>자동차 견적</h1>
+    <p>
+        <img src="images/car2.jpg" alt="Car이미지" width="600" height="300">
+    </p>
+    <table id="car">
+        <colgroup>
+            <col width="50%">
+            <col width="30%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>옵 션</th>
+                <th>추 가 가 격</th>
+                <th>선택여부</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th id="totalTxt">차량금액(옵션포함)</th>
+                <th colspan="2">
+                    <input type="text" name="total" value="20000000" id="total">
+                </th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>천연가죽시트</td>
+                <td>250000</td>
+                <td><input type="checkbox" name="opt1" value="250000" id="opt1" class="opt"></td>
+            </tr>
+            <tr>
+                <td>네비게이션</td>
+                <td>250000</td>
+                <td><input type="checkbox" name="opt2" value="250000" id="opt2" class="opt"></td>
+            </tr>
+            <tr>
+                <td>썬루프</td>
+                <td>440000</td>
+                <td><input type="checkbox" name="opt3" value="440000" id="opt3" class="opt"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+    
+</html>
