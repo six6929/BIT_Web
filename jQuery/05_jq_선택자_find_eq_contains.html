@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        //필터선택자 - 선택자에 콜른(:) 기호를 포함하는 선택자
+        //:contains(문자열) - 문자열을 포함하고 있는 요소
+        //:find(찾을대상) - 찾을 대상에 해당하는 인덱스 요소
+        //:eq(index) - 인덱스와 같은 요소
+        //:gt(index) - 인덱스보다 큰 요소
+        //:lt(index) - 인덱스보다 작은 요소
+        $().ready(function(){
+            $("td:contains('Java')").css("background-color","yellow"); 
+            $("td:contains('JSP')") //JSP문자열이 있는 요소 선택
+                .css("border", "1px dotted red")
+                .siblings() //형제노드(요소) 선택(기준요소 포함 안함)
+                .css("color", "red")
+                .parent() //부모요소
+                .find("td:eq(1)") //td태그 중 인덱스 번호 1번(두번쨰)
+                .css("background-color", "aqua");
+            
+            $("td:contains('Java')")
+                .parent()
+                .find("td:gt(0)")
+                .css("background-color", "orange");
+            
+            //클래스명에 해당하는 객체의 태그명 확인
+            var name = $(".c1").get(1).tagName;
+            alert('$(".c1).get(1).tagName : ' + name);
+        });
+    </script>
+</head>
+<body>
+    <table border="1">
+        <thead class="c1">
+            <th>과목</th>
+            <th>상세내용</th>
+            <th>버전</th>
+        </thead>
+        <tbody class="c1">
+            <tr>
+                <td>JSP</td>
+                <td>Servlet, EL, JSTL</td>
+                <td>2,3</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>basis</td>
+                <td>8,0</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

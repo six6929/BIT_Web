@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById("id1").style.color = "aquamarine";
+        }
+        
+        //--------------------------------------
+        //jQuery 사용 방식 3가지(window.onload -> jQuery 방식)
+        //jQuery(document).ready(function(){});
+        //방식1 : $(document).ready(function(){});
+        $(document).ready(function() {
+            $("#id1").css("background-color", "darkgray");
+        });
+        
+        //jQuery(document).ready(function(){});
+        //방식2 : $().ready(function(){})
+        $().ready(function(){
+            $("#id1").css("border", "2px solid red")
+        });
+        
+        //jQuery(function(){});
+        //방식3 : $(function(){});
+        $(function() {
+            $("#id1").css("border", "1px solid black");
+            
+            //jQuery 사용객체를 찾아서 스타일 적용하는 방식
+            $("#id1").css("color", "blue");
+            $("#id2").css("background-color", "aquamarine");
+            $("#id3").css("background-color", "darkred");
+            $("#id3").css("color", "white");
+            
+            $(".cl_h3").css("background-color", "gray");
+            
+            $("div h3").css("background-color", "orange");
+            $("#id4").css("background-color", "yellow");
+            
+            $(".cl_p").css("background-color", "yellow");
+            $("div > span > h1").css("background-color", "green");
+        }); 
+        
+    </script>
+    <style>
+        #id4{
+            background-color: aquamarine;
+        }
+        div h3 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="id1">제이쿼리(jquery) - id1</h1>
+    <h3 id="id2">제이쿼리(jquery) - id2</h3>
+    <h3 id="id3">제이쿼리(jquery) - id3</h3>
+    
+    <h3 class="cl_h3">제이쿼리3 - cl_h3</h3>
+    <h3 class="cl_h3">제이쿼리4 - cl_h3</h3>
+    
+    <div>
+        <h1>--div안에 h1</h1>
+        <h3 id="id4">--div안에 h3: id4</h3>
+        <h3>--div안에 h3</h3>
+        <h3>--div안에 h3</h3>
+        <span>
+            <h1>--!--div > span > h1</h1>
+            <p class="cl_p">--!--div > span > p</p>
+        </span>
+    </div>
+</body>
+</html>

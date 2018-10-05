@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ click, change</title>
+    <!-- jQuery import 방식2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script>
+    $(function(){
+        //selecct 이벤트 확인 click, change
+        $("#mySelect").click(function(){
+            console.log("select click");
+        });
+        $("#mySelect").change(function(){
+            console.log("> select change 이벤트발생!!");
+            var res = $("#mySelect>option:selected").val();
+            $("#str1").val(res);
+        });
+        
+        //radio 이벤트 확인 click, change
+        $(".gender").click(function(){
+            console.log("-radio click");
+        });
+        $(".gender").change(function(){
+            console.log("-> radio change 이벤트발생!!");
+            var res = $(".gender:checked").val();
+            $("#str2").val(res);
+        });
+        
+        //checkbox 이벤트 확인 click, change
+        $(".chk").click(function(){
+            console.log("--checkbox click");
+        });
+        $(".chk").change(function(){
+            console.log("--> checkbox change 이벤트발생!!");
+            var res = "";
+            $(".chk:checked").each(function() {
+                res += $(this).val() + " "
+            });
+            $("#str3").val(res);
+        });
+    });
+</script>
+</head>
+<body>
+    <select id="mySelect">
+        <option>Java</option>
+        <option>JavaScript</option>
+        <option>jQuery</option>
+    </select>
+    <input type="text" id="str1" name="str1">
+    <hr>
+    
+    <input type="radio" name="gender" id="gender1" class="gender" value="남">남
+    <input type="radio" name="gender" id="gender2" class="gender" value="여">여
+    <input type="text" id="str2" name="str2">
+    <hr>
+    
+    <input type="checkbox" name="hobby" class="chk" value="축구">축구
+    <input type="checkbox" name="hobby" class="chk" value="야구">야구
+    <input type="checkbox" name="hobby" class="chk" value="배구">배구
+    <input type="checkbox" name="hobby" class="chk" value="농구">농구
+    <input type="text" id="str3" name="str3">
+    
+</body>    
+</html>
+
+
+
+
+
+

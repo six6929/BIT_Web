@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    var subject = ["Java", "HTML", "CSS", "JavaScript", "jQuery"];
+    var index = 0;
+    var timer;
+    
+    $(function(){
+        //타이머 동작 시키기
+        $("#start").on("click", function(){
+            start();
+        });
+        //타이머 동작 중지
+        $("#stop").on("click", function(){
+            stop();
+        });
+    });
+    
+    //목록보여주기 함수
+    function dispSubject(){
+        $("#myDiv").html(index +" : "+ subject[index++]);
+        if (index >= subject.length) index = 0;
+    }
+    
+    //목록보여주기 타이머 동작 시키기
+    function start() {
+        console.log(">> 목록보여주기 버튼 클릭");
+        //setInterval(함수, 밀리초)
+        timer = setInterval(dispSubject, 1000);
+    }
+    
+    //타이머 동작 중지
+    function stop() {
+        console.log(">> 중지 버튼 클릭");
+        clearInterval(timer);
+    }
+</script>
+</head>
+<body>
+    <!--HTML 코드에서 이벤트 연결-->
+    <button onclick="start()">목록보여주기</button>
+    <button onclick="stop()">중지</button>
+    <span>-----</span>
+   
+    <!-- JavaScript에서 이벤트 연결-->
+    <button id="start">목록보여주기</button>
+    <button id="stop">중지</button>
+    <div id="myDiv"></div>
+</body>    
+</html>

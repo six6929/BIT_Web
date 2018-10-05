@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ 테이블 동적생성</title>
+    <!-- jQuery import 방식2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+<script>
+    //행, 열의 값이 입력되고, <테이블생성>버튼이 클릭되면
+    //첫줄을 제외한 행과 열 갯수만큼 동적으로 테이블 태그 작성
+    $(function() {
+        
+       
+        
+        $("#btn").click(function() {
+            
+            //1. 입력값 읽어오기(행, 열)
+            var tstart = "<table><tbody>";
+            var tend = "</tbody></table>";
+            var content ="";
+            var rowNum = parseInt($("#row").val());
+            var colNum = parseInt($("#col").val());
+            
+            
+            //2. HTML 테이블 태그 작성(입력된 행과 열 만큼)
+            content += "<tr>"
+            for(var k=1; k<=colNum; k++) {
+                content += "    <th> 항목" + k + "</th>"
+            }
+            content += "</tr>"
+            
+            for(var i=1; i<=rowNum; i++) {
+                content += "<tr>"
+                for(var j=1; j<=colNum; j++) {
+                    content += "<td> 데이터" + i + "," + j + "</td>"
+                }
+                content += "</tr>"
+            };
+    
+            //3. 정해진 위치(myDiv)에 HTML 태그 입력
+            $("#myDiv").html(tstart + content + tend);
+        
+            
+        });
+    })
+</script>
+<style>
+    table {border-collapse: collapse; }
+    th, td {border : 2px solid black;}
+    th {background-color: darkgray;}
+    #myDiv{background-color: yellow;}
+</style>
+</head>
+<body>
+    <h2>테이블 동적 생성</h2>
+    <input type="text" id="row">행
+    <input type="text" id="col">열
+    <input type="button" id="btn" value="테이블 생성">
+    <hr>
+    <div id="myDiv">
+
+    </div>
+    <hr>
+    <div id="ex">
+        <h3>th제외 2행 3열 테이블</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>항목1</th>
+                    <th>항목2</th>
+                    <th>항목3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>내용1,1</td>
+                    <td>내용1,2</td>
+                    <td>내용1,3</td>
+                </tr>
+                <tr>
+                    <td>내용2,1</td>
+                    <td>내용2,2</td>
+                    <td>내용2,3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>    
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            //nth-child(번호) : 자녀태그 중 몇 번째
+            $("ul").css("background-color", "aqua");
+            
+            $("ul>li").css("border", "1px dotted black");
+           /* $("ul>li:first").css("background-color", "yellow");
+            $("ul > li:last").css("background-color", "orange");*/
+            
+//            $("ul > li:even").css("background-color", "yellow");
+//            $("ul > li:odd").css("background-color", "orange");
+            
+            //$ul>li : 각각의 ul 태그에 독립적으로 적용
+//            $("ul>li:nth-child(1)").css("background-color", "yellow");
+           /* $("ul>li:nth-child(2n)").css("background-color", "yellow");
+            $("ul>li:nth-child(2n+1)").css("background-color", "orange");*/
+            
+            //slice(시작) : 시작 위치부터 끝까지 선택
+//            $("ul>li").slice(1).css("background-color", "yellow");
+            
+            //slice(시작, 끝) : 시작부터 끝 이전까지(시작값 0부터)
+//            $("ul>li").slice(2,5).css("background-color", "yellow");
+            
+            //slice() 사용시 음수를 사용하는 경우 : 뒤쪽이 기준
+            $("ul>li").slice(-3,-1).css("background-color", "yellow");
+            
+            //--------------------------------------------
+            //children(선택자) : 자손태그 중에서 선택
+            $("ul:first").css("background-color", "green");
+            $("ul:first").children().css("background-color", "yellow");
+            $("ul:first").children("li:first").css("color", "red");
+            
+            //---------------------------------------
+            $("h1, h1+ul > li:eq(3)").css("background-color","orange");
+        });
+        
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <div>
+            <li>-- | -- div안의 li</li>
+            <p>ul - div - p태그</p>
+            <div>
+                <p>안녕하세요</p>
+                <p>반갑습니다~~~</p>
+            </div>
+        </div>
+        <p> 임시추가</p>
+        <li>menu6</li>
+        <li>menu7</li>
+    </ul>
+    <ul>
+        <li>memu2 - 1</li>
+        <li>memu2 - 2</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ keydown, keyup, keypress</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            //키보드 이벤트 발생순서
+            //keydown -> keypress -> keyup
+            //keyup : 한 번만 발생
+            //keydown, keypress : 키가 눌린상태에서 계속 발생
+            
+            $("#pwd").keydown(function() {
+                console.log("keydown 이벤트 발생"); 
+            });
+            
+            $("#pwd").keypress(function() {
+                console.log(">> keypress 이벤트 발생"); 
+            });
+            
+            $("#pwd").keyup(function() {
+                console.log("----- keyup 이벤트 발생")
+                $("myDiv").text("");
+            });
+            
+            //비밀번호확인란에 입력되면 비밀번호값과 비교
+            $("#pwd2").keyup(function() {
+                console.log("==> pwd2 keyup 이벤트 발생");
+                if($("#pwd").val() == $("#pwd2").val()) {
+                    $("#myDiv").html("암호가 일치합니다.");
+                }  else {
+                    $("#myDiv").html("암호가 다릅니다.");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>비밀번호 : <input type="password" id="pwd" name="pwd"></p>
+    <p>비밀번호 확인 : <input type="password" id="pwd2" name="pwd2"></p>
+    <div id="myDiv">
+        암호를 입력하세요
+    </div>
+</body>
+</html>

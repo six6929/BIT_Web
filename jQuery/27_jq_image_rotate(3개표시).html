@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+		var nextE = -176;
+		var nextCnt = 0;
+		var prevE = -1584;
+		var prevCnt = 0;
+    	$(function() {
+			$("#next").on("click", function() {
+				
+				$("#imgul").css("margin-left", nextE +"px");
+				nextE += -176;
+				nextCnt++;
+				if(nextCnt == 10) {
+					$("#imgul").css("margin-left", "0px");
+					nextE = -176;
+					nextCnt = 0;
+				}
+			});
+			
+			$("#prev").on("click",function() {
+				nextE += 176;
+				$("#imgul").css("margin-left",  nextE + "px");
+				
+				if(nextE >= 176) {
+					
+					$("#imgul").css("margin-left", prevE + "px")
+					prevE += 176;
+					prevCnt++;
+					if(prevCnt == 11) {
+						prevE = -1584;
+						$("#imgul").css("margin-left", prevE + "px");
+						prevCnt = 0;
+					}
+				}
+				
+				
+			});
+			
+			
+			
+		});    
+    </script>
+    <style>
+		* {
+			margin : 0;
+			padding: 0;
+		}
+		
+		#simgs {
+			width : 528px; /* 이미지(176 * 3) 3개 이미지 크기 */
+			height : 176px;
+/*			border: 1px solid black;*/
+			/*overflow: hidden;*/
+			position: relative;
+			left : 50px;
+		}
+		
+		#simgs > ul {
+			list-style: none;
+		}
+		
+		#simgs > ul > li {
+			float: left;
+		}
+		
+		#simgs > a {
+			clear : both;
+			position: absolute;
+			display: inline-block;
+			top : 70px;
+			width: 50px;
+			height : 50px;
+			
+			background-color: yellow;
+			border-radius: 50%;
+			
+			text-decoration: none;
+			text-align: center;
+			line-height: 50px;
+		}
+		
+		#prev {
+			left : 0px;
+		}
+		
+		#next {
+			left : 480px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="simgs">
+		<ul id="imgul">
+			<li><img src="images/simg01.jpg"></li>
+			<li><img src="images/simg02.jpg"></li>
+			<li><img src="images/simg03.jpg"></li>
+			<li><img src="images/simg04.jpg"></li>
+			<li><img src="images/simg05.jpg"></li>
+			<li><img src="images/simg06.jpg"></li>
+			<li><img src="images/simg07.jpg"></li>
+			<li><img src="images/simg08.jpg"></li>
+			<li><img src="images/simg09.jpg"></li>
+			<li><img src="images/simg10.jpg"></li>
+			
+			<li><img src="images/simg01.jpg"></li>
+			<li><img src="images/simg02.jpg"></li>
+		</ul>
+		
+		<a id="prev">&lt;&lt;</a>  
+		<a id="next">&gt;&gt;</a> 
+	</div> 
+</body>
+</html>

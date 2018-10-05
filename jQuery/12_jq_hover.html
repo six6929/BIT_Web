@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ addClass, removeClass, hover</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        .bg_yellow {
+            background-color: yellow;
+        }
+        
+        .c_red {
+            color : red;
+        }
+    </style>
+    <script>
+        $(function() {
+            //테이블 tr태그 중 첫번째(0번 인덱스)보다 큰 tr태그
+            //마우스가 위치하면 bg_yellow 클래스명 추가
+            $("table tr:gt(0)").on("mouseover", function() {
+                $(this).addClass("bg_yellow");
+            })
+            
+            $("table tr:gt(0)").on("mouseout", function() {
+                $(this).removeClass("bg_yellow");
+            })
+            
+            //-----------------------------------------
+            //마우스가 위로 올라왔을 때, 떠날 때 한 번에 이벤트 연결 처리
+            //hover(in, out)
+            $("table tr:gt(0)").hover(
+                //마우스가 올라왔을 때
+                function() {
+                    $(this).addClass("c_red");
+                },
+                //마우스가 떠날 때
+                function() {
+                    $(this).removeClass("c_red");
+                }
+            );
+        });
+    </script>
+    
+</head>
+<body>
+    <table border="1">
+        <tr><th>제목</th></tr>
+        <tr><th>Java</th></tr>
+        <tr><th>JSP</th></tr>
+        <tr><th>Spring</th></tr>
+    </table>
+</body>
+</html>

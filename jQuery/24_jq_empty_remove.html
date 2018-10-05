@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        //기준.empty() : 기준태그의 내용을 삭제
+		//기준.remove() : 기준태그 자체를 삭제
+		$(function() {
+			$("#empty").click(function() {
+				$("#myDiv").empty();
+			});
+			
+			//remove는 태그 자체를 삭제
+			$("#remove").click(function() {
+				$("#myDiv").remove();
+			});
+			
+			//append로 child 추가
+			$("#append").click(function() {
+				$("#myDiv").append("<p>append 버튼으로 추가한 내용</p>");
+			});
+			
+			$("#html").click(function() {
+				$("#myDiv").html("<p>html() 사용 추가한 내용</p>")
+			});
+		});
+    </script>
+    <style>
+		#myDiv {
+			height : 200px;
+			border : 2px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<button id="empty">초기화(empty)</button>  
+	<button id="remove">삭제(remove)</button>
+	
+	<button id="append">추가(append)</button>
+	<button id="html">innerHTML수정(html)</button>
+	
+	<hr>
+	<div id="myDiv">
+		<p>Java</p>
+		<p>HTML</p>
+		<p>CSS</p>
+	</div>  
+</body>
+</html>

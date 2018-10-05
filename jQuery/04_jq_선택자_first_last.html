@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        .c_red {color :red}
+        .c_orange {color: orange}
+        .c_silver { color : silver}
+        .c_purple {color : purple}
+        
+        .bg_green {background-color: green}
+        .bg_red {background-color: red}
+        .bg_blue {background-color: blue}
+    </style>
+    <script>
+        $(function(){
+            //:first - 첫번째 요소 찾기
+            $("ul > li").addClass("c_red");
+            $("div:first").addClass("c_red");
+            $("li:first").addClass("bg_green");
+            
+            //:last - 마지막 요소 찾기
+            $("div:last").addClass("c_purple");
+            
+            //:odd - 홀수요소
+            //:even - 짝수요소
+            //주의 : 요소들이 0부터 시작(시작은 짝수 : 0)
+            $("div:odd").addClass("bg_red");
+            $("div:even").css("border", "2px solid black");
+            
+            $("li:odd").css("background-color", "gray");
+            $("li:even").css("border", "1px dotted black");
+            
+            //-----------------------------------------
+            //자녀태그
+            $("ul > li").css("background-color", "aquamarine");
+            $("body > ul > li").css("background-color", "yellow");
+            $("body > ul > ul > ul > li").css("font-size", "120%");
+            $("body > ul > ul > li").css("background-color", "green");
+            
+            //자손태그
+            $("body > ul > ul > li").css("color", "white");
+            
+            //------------------------------------------
+            //CSS 다중 설정
+            $("#txt").css("background-color", "yellow");
+            $("#txt").css("font-size", "2em");
+            $("#txt").css("border", "2px dashed black");
+            
+            //체이닝 기법 사용
+            $("#txt").css("background-color", "orange")
+                     .css("font-size", "1.5em")
+                     .css("border", "2px dashed blue");
+            
+            //CSS 값으로 객체 : {키:값, 키:값, ...} 
+            $("#txt").css({
+                "background-color" : "aqua",
+                "font-size" : "2em",
+                "border" : "2px solid red"
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="red">
+        <h3>h3 Red 영역1, idx0</h3>
+    </div>
+    <div>div Green 영역2, idx1</div>
+    <div>div Blue 영역3, idx2</div>
+    <div>div 영역4, idx3</div>
+    <span id="txt">텍스트 영역</span>
+    
+    <ul>
+        <li>Java</li>
+        <li>Servlet JSP</li>
+        <ul>
+            
+            <li>Servlet</li>
+            <ul>
+                <li>EL</li>
+                <li>JSTL</li>
+            </ul>
+            <li>JSP</li>
+        </ul>
+        <li>Spring</li>
+    </ul>
+    <div>
+        div /body전
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function() {
+			//$(기준).before(추가대상)
+			$("#subject").before("<h2>프로그래밍 언어(before)</h2>");
+			
+			//-----------------------------------
+			//$(추가대상).insertBefore(기준)
+			$("<h2>프로그래밍 언어(insertBefore)</h2>").insertBefore("#subject");
+			
+			//===========================================
+			//$(기준).after(추가대상)
+			$("#subject").after("<p>JavaScript(after)</p>");
+			
+			//$(추가대상).insertAfter(기준)
+			$("<p>JavaScript(insertAfter)</p>").insertAfter("#subject");
+		});
+    </script>
+</head>
+<body>
+	<p id="subject">Java</p> 
+</body>
+</html>

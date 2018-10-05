@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ 보이기 숨기기</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    	$(function() {
+			
+			$("input[value='숨기기(hide)']").click(function() {
+				$("#box").hide("fast");
+			});
+			
+			$("input[value='보이기(show)']").click(function() {
+				$("#box").show("slow");
+			});
+			
+			$("input[value='번갈아수행(toggle)']").click(function() {
+				$("#box").toggle(3000);
+			});
+			
+			$("input[value='위로숨기기(slideup)']").click(function() {
+				$("#box").slideUp(3000);
+			});
+			
+			$("input[value='아래로보이기(slidedown)']").click(function() {
+				$("#box").slideDown(3000);
+			});
+			
+			$("input[value='위로숨기기, 아래로보이기(slideToggle)']").click(function() {
+				$("#box").slideToggle(3000);
+			});
+		});   
+    </script>
+</head>
+<body>
+	<input type="button" value="숨기기(hide)">
+	<input type="button" value="보이기(show)">
+	<input type="button" value="번갈아수행(toggle)">
+	
+	<input type="button" value="위로숨기기(slideup)">
+	<input type="button" value="아래로보이기(slidedown)">
+	<input type="button" value="위로숨기기, 아래로보이기(slideToggle)">
+ 	<div id="box">
+ 		<img src="images/car1.jpg" alt="자동차">
+ 	</div> 
+</body>
+</html>

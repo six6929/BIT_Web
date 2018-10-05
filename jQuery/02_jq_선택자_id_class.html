@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        .bg {background-color: yellow;}
+        .cr {color:red;}
+        .cb {color : blue};
+        .cg {color: green;}
+        .horizontal {
+            float : left;
+            list-style: none;
+            margin:10px;
+        }
+        .sizeup { font-size: 1.5em;}
+        .clear {clear:both;}
+        .bg-aqua {background-color: aqua;}
+        .bg-orange {background-color: orange;}
+    </style>
+    <script>
+        $(function() {
+            //요소(element) 선택자(요소명) : 해당 태그 선택
+            //li태그에 클래스 추가(.bg)추가
+            $("li").addClass("bg");
+            
+            //클래스 선택(.) : 해당클래스명 가진 요소 선택
+            $(".s").addClass("cr");
+            
+            //아이디 선택(#) : 해당 아이디명 가진 요소 선택
+            $("#jsp").addClass("cg");
+            
+            //-----------------------
+            //자식, 자손 태그 컨트롤
+            //자식(자녀) 선택자(>) : 하위 child 요소 선택
+            $("ul>li").addClass("horizontal");
+            $("div>div>p").addClass("cb");
+            
+            //자손 선택자(빈칸) : 부모태그 + 빈칸(공백) + 자손태그
+            $("ol li").addClass("horizontal");
+            $("hr").addClass("clear");
+            
+            $("div p").addClass("sizeup");
+            
+            //----------------------------------------------
+            //자녀(child) 찾을 때 앞에 위치
+            $("div>p").addClass("bg-aqua");
+            $("body>div>p").addClass("bg-orange");
+        });
+    </script>
+</head>
+<body>
+  <ul>
+      <li>Java</li>
+      <li>HTML5 &amp; CSS3</li>
+      <li class="s">JavaScript &amp; jQuery</li>
+      <li ud="jsp">Servlet &amp; JSP</li>
+  </ul>
+  <hr class="clear">
+  <ol>
+      <li>Java</li>
+      <li>HTML5 &amp; CSS3</li>
+      <li class="s">JavaScript &amp; jQuery</li>
+      <li id="jsp">Servlet &amp; JSP</li>
+  </ol>
+  <hr>
+  <div>
+      <p>div &gt; p 태그</p>
+      <div>
+          <span>
+              <p>div &gt; div &gt; span &gt; p태그</p>
+          </span>
+          <span>
+              div &gt; div &gt; span태그
+          </span>
+      </div>
+      <div>
+          <p>div &gt; div &gt; p태그</p>
+      </div>
+      <p>div &gt; p태그</p>
+  </div>
+</body>
+</html>

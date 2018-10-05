@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        var timer;
+        var position = 0;
+        
+        $(function() {
+            $("#moveCar").click(function() {
+				if(timer != null) return;
+                timer = setInterval(moveImage, 100);
+            });
+            
+            $("#car").click(function() {
+                clearInterval(timer);
+				timer = null;
+            });
+			
+			function moveImage() {
+            	position += 5;
+            	$("#car").css("margin-left", position);
+			};
+			
+        });
+        
+        
+    </script>
+    <style>
+/*        #car { margin-left : 50px; }*/
+    </style>
+</head>
+<body>
+    <button id="moveCar">자동차이동</button>
+    <hr>
+    <img id="car" src="images/car.jpg" alt="자동차">
+    
+</body>
+</html>

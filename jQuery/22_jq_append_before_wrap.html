@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ 태그 추가하기</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    	$(function() {
+			//.html(내용) : 내용을 html 태그로 입력(update)
+			/*$("#myDiv").html("<p>반갑습니다.</p>");
+			$("#myDiv").html("<p>또만나요.</p>");*/
+			
+			//append : 기존태그 유지하고 태그 추가(append);
+			$("#myDiv").append("<p>반갑습니다.</p>");
+			$("#myDiv").append("<p>또 만나요.</p>");
+			
+			//.before(), .after() : 전과 후에 태그 추가
+			$("h2").before("<h1>개발자 과정</h1>");
+			$("h2").after("<p>(웹프로그래머 양성과정)</p>");
+			
+			$("#myDiv").before("<p>반갑습니다</p>");
+			$("#myDiv").after("<p>또 만나요(after)</p>");
+			
+			//.wrap() : 바깥쪽에 감싸는 태그 추가
+			$("h2").wrap("<em></em>");
+			
+			//<a>태그를 목록(li) 태그로 감싸기
+			$("a").wrap("<li></li>")
+		});
+    </script>
+    <style>
+		h2 {border : 2px solid orange;}
+		#myDiv {border : 2px solid blue};
+	</style>
+</head>
+<body>
+	<em><h2>Java Web 프로그래밍 관련</h2></em>
+	<a href="#">Java</a> 
+	<a href="#">JavaScript</a> 
+	<a href="#">JSP</a> 
+	<a href="#">Spring</a>
+	<hr>
+	<p class="myClass">1장</p>
+	<div>내용...</div>
+	
+	 <p class="myClass">2장</p>
+	<div>내용...</div>
+	
+	 <p class="myClass">3장</p>
+	<div>내용...</div>
+	
+	 <hr>
+	 <div id="myDiv">
+	 	<p>안녕하세요.</p>
+	 </div> 
+</body>
+</html>

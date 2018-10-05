@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ 사라지고, 나타나기</title>
+    <!-- jQuery import 방식2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(function(){
+        //hide, show, toggle
+        var idx = 0; //인덱스값 변수 처리
+        $("button").eq(idx++).on("click", function(){
+            $("#txt").hide("slow");
+        });
+        $("button").eq(idx++).on("click", function(){
+            $("#txt").show("fast");
+        });
+        $("button").eq(idx++).on("click", function(){
+            $("#txt").toggle(3000);
+        });
+        
+        //slideUp, slideDown, slideToggle
+        $("button").eq(3).on("click", function(){
+            $("#txt").slideUp("slow");
+        });
+        $("button").eq(4).on("click", function(){
+            $("#txt").slideDown("fast");
+        });
+        $("button").eq(5).on("click", function(){
+            $("#txt").slideToggle(3000);
+        });
+        
+        //fadeOut, fadeIn, fadeToggle
+        $("button").eq(6).on("click", function(){
+            $("#txt").fadeOut("slow");
+        });
+        $("button").eq(7).on("click", function(){
+            $("#txt").fadeIn("fast");
+        });
+        $("button").eq(8).on("click", function(){
+            $("#txt").fadeToggle(3000);
+        });
+    
+        //fadeTo(시간, 투명도) : 투명도 지정 희미하게
+        $("button").eq(9).on("click", function(){
+            $("#txt").fadeTo(2000, 0);
+        });
+        $("button").eq(10).on("click", function(){
+            $("#txt").fadeTo(2000, 0.2);
+        });
+        $("button").eq(11).on("click", function(){
+            $("#txt").fadeTo(2000, 0.6);
+        });
+    });
+</script>
+</head>
+<body>
+    <button>감추기(hide)</button>
+    <button>보이기(show)</button>
+    <button>toggle(hide/show)</button>
+    
+    <button>위로숨기기(slideUp)</button>
+    <button>아래로 나타나기(slideDown)</button>
+    <button>슬라이드 토글(slideToggle)</button>
+    
+    <button>사라지기(fadeOut)</button>
+    <button>나타나기(fadeIn)</button>
+    <button>fadeToggle(fadeIn/fadeOut)</button>
+    
+    <button>fadeTo(2000, 0)</button>
+    <button>fadeTo(2000, 0.2)</button>
+    <button>fadeTo(2000, 0.6)</button>
+    
+    
+    <h1 id="txt">내용보기</h1>
+    <hr>
+    <p>안녕하세요~ 반갑습니다.</p>
+</body>    
+</html>

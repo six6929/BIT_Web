@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+		var proNum = 1;
+		var proNum1 = 0;
+		$(function() {
+			$("#next").on("click", function() {
+				proNum++;
+				if(proNum > 10) {
+					proNum = 1;
+				}
+				if(proNum == 10) {
+					$("img").prop("src", "images/bimg" + proNum +".jpg");
+				} else {
+					$("img").prop("src", "images/bimg" + proNum1 + proNum +".jpg");
+				}
+			});
+			
+			$("#prev").on("click", function() {
+				proNum--;
+				if(proNum < 1) {
+					proNum = 10;
+				}
+				if(proNum == 10) {
+					$("img").prop("src", "images/bimg" + proNum +".jpg");
+				} else {
+					$("img").prop("src", "images/bimg" + proNum1 + proNum +".jpg");
+				}
+			});
+			
+			
+		});
+		
+    </script>
+    <style>
+		div a {
+			background-color: darkgreen;
+			border : 8px solid darkgreen;
+			border-radius: 15px;
+			text-decoration: none;
+			color: white;
+			position : absolute;
+			margin-top: 150px;
+		}
+		
+		#prev{
+			left: 70px;
+	
+		}
+		
+		#next{
+			left: 290px;
+		}
+		
+		div img {
+			margin-left: 50px;
+			
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<a id="prev" href="#">prev</a>
+		<img src="images/bimg01.jpg" alt="상품이미지">
+		<a id="next" href="#">next</a>
+	</div>
+</body>
+</html>

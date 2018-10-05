@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        .c_red {color :red}
+        .c_orange {color: orange}
+        .c_silver { color : silver}
+        .c_purple {color : purple}
+        .bg_green {background-color: green}
+        .bg_red {background-color: red}
+    </style>
+    <script>
+        $(function(){
+            //요소(element)의 속성값 접근
+            //요소[속성] : 해당 속성이 있는 요소
+            //요소[속성=값] : 속성값이 일치하는 요소
+            //요소[속성^=값] : 속성값으로 시작하는 요소
+            //요소[속성$=값] : 속성값으로 끝나는 요소
+            //요소[속성*=값] : 속성값을 포함하는 요소
+            
+            //a태그에 href 속성이 있는 요소 - 글자색 빨강
+            $("a[href]").addClass("c_red");
+            //a태그 중 href 속성 값이 naver인 것(대상없음)
+            $("a[href='naver']").addClass("c_orange");
+            //a태그 중 href 속성 값이 mail 시작하는 것 - 글자색 silver
+            $("a[href^='mail']").addClass("c_silver");
+            //a태그 중 href 속성 값이 net으로 끝나는 것 - 글자색 purple
+            $("a[href$='net']").addClass("c_purple");
+            //a태그 중 href 속성 값에 naver 가 있는 것 - 글자색 orange
+            //(참고) 동일속성에 대한 속성값이 중복인 경우 스타일 작성 형태에 따라서 적용
+            //c_silver, c_orange 클래스 속성이 동시 적용되어 있을 때
+            //CSS에 설정된 위치에 따라 최종 적용되는 값은 c_silver 설정 적용*
+            $("a[href*='naver']").addClass("c_orange");
+            
+            $("a[href*='naver']").css("border", "1px solid blue");
+            
+            //-----------------------------------------------------
+            //AND, OR 조건 형태로 속성값 찾기
+            //OR 조건 형태로 속성값 찾아서 스타일 적용([],[])
+            $("a[href^='mailto'],a[href*='naver']").addClass("bg_green");
+            
+            //AND 조건 형태로 속성값 찾아서 스타일 적용([][])
+            //mailto로 시작하고, naver가 들어가 있는 것만
+//            $("a[href^='mailto'][href*='naver']").addClass("bg_red");
+            $("a[href^='mailto'][href*='naver']").css("background-color", "red");
+        });
+    </script>
+</head>
+<body>
+  
+  <a href="https://www.naver.com">네이버</a>
+  <a href="https://www.daum.net">다음</a>
+  <a href="http://www.nate.com">네이트</a>
+  <a>구글</a>
+  <a href="naver">네이버(href="naver")</a>
+  <hr>
+  
+  <a href="mailto:naver@naver.com">네이버메일</a>
+  <a href="mailto:daum@daum.net">다음메일</a>
+  <a href="mailto:nate@nate.com">네이트메일</a>
+  
+</body>
+</html>

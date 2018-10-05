@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+    	$(function() {
+			$("#run").click(function() {
+				//우측으로 300px 이동 후, 되돌아오기 : 2개 동작
+				$("h1").animate({"margin-left" : "300px"}, 3000)
+					.animate({"margin-left" : "0px"}, 3000);
+			});
+			
+			$("#stop").click(function() {
+				$("h1").stop();
+			});
+			
+			$("#stopstop").click(function() {
+				$("h1").stop().stop();
+			});
+			
+			//.clearQueue() : 예정된 작업 취소(삭제)
+			$("#clearQueueStop").click(function() {
+//				$("h1").clearQueue(); //큐에 저장된 명령을 삭제
+				//$("h1").stop();
+				
+			});
+		})
+    </script>
+</head>
+<body>
+	<button id="run">run</button>
+	<button id="stop">stop</button>
+	<button id="stopstop">stopstop</button>
+	<button id="clearQueueStop">clearQueueStop</button>
+	<hr>
+	<h1>abcde</h1>
+</body>
+</html>

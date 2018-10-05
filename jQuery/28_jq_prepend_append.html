@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+		$(function() {
+			//ul의 자녀태그(li) 중 첫번째 요소를 맨 뒤에 추가하기
+			$("#next").click(function() {
+				var li_first = $("#ul>li").eq(0);
+				$("#ul").append(li_first);
+			});
+			
+			//ul의 자녀태그(li) 중 마지막 요소를 맨 앞에 추가하기
+			$("#prev").click(function() {
+				var li_last = $("#ul > li").eq(4);
+				$("#ul").prepend(li_last);
+			});
+			
+			//li 태그들 더블클릭하면 맨뒤로 보내기
+			$("#ul > li").dblclick(function() {
+				var $this = $(this);
+				$("#ul").append($this);
+			})
+		});    
+    </script>
+</head>
+<body>
+	<ul id="ul">
+		<li>menu-1</li>
+		<li>menu-22</li>
+		<li>menu-333</li>
+		<li>menu-4444</li>
+		<li>menu-55555</li>
+	</ul>
+	<button id="prev">prepend</button>  
+	<button id="next">append</button>  
+</body>
+</html>

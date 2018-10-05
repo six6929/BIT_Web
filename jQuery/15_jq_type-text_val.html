@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ val()</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function() {
+            $("[type=text]").css("background-color", "yellow");
+            $("#btn").click(function() {
+                //아이디1 -> 아이디2 복사
+                var txt = $("#id1").val(); //val() : 값을 읽어오기
+                $("#id2").val(txt);
+                
+//                $("#id2").val($("#id1").val());
+            });
+            
+            //checkbox, radio, select : click() - 마우스, 키보드 액션
+            //checkbox, radio, select : change() - 값에 변화가 있는 경우
+            $("#chk").change(function() {
+                //체크된 상태인 경우 복사 처리, 체크된 상태가 아니면 값 삭제
+                if(this.checked) {
+                    $("#id2").val($("#id1").val());
+                } else {
+                    $("#id2").val("");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    아이디 : <input type="text" name="id1" id="id1" value="기본">
+    <hr>
+    <input type="button" value="상동(위와동일)" id="btn">
+    <input type="checkbox" id="chk"> 아이디복사(해제시 초기화)
+    <hr>
+    아이디 2 : <input type="text" name="id2" id="id2">  
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JQ each, text, html</title>
+    <!-- jQuery import 방식1 -->
+<!--  <script src="js/jquery-3.3.1.min.js">jQuery 코드</script>-->
+    
+    <!-- jQuery import 방식 2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function() {
+            //동적으로 id 속성 값 부여 : param-0, param-1, ...,
+            //each 메소드 사용 : 매개변수로 인덱스값을 받아서 사용
+            $("p").each(function(idx){
+                $(this).prop("id", "param-" + idx);
+            });
+            
+            $("#param-0").css("background-color", "yellow");
+            
+            
+            //text, html 메소드 사용
+            $("#btn1").click(function() {
+                var text = $("#param-1").text(); //text 값 읽기
+                alert("id가 param-1인 태그의 text : " + text);
+                
+                var html = $("#param-1").html(); //html 값 읽기
+                alert("id가 param-1인 태그의 html : " + html);
+            })
+            
+            //text, html 메소드 사용
+            $("#btn2").click(function() {
+                $("#param-2").text("안녕하세요");//text값 설정
+                $("#param-3").html("안녕하세요");//html값 설정
+                
+                $("#param-4").text("<b>안녕하세요</b>");//text값 설정
+                $("#param-5").html("<b>안녕하세요</b>");//html 태그 설정
+            })
+        });
+    </script>
+    <style>
+/*        #param-0 {background-color: yellow};*/
+    </style>
+</head>
+<body>
+    <p>이것은 단락이다</p>
+    <p><strong>첫번째</strong></p>
+    <p>두번째</p>
+    <p>세번째</p>
+    <p>네번째</p>
+    <p>다섯번째</p>
+    <input type="button" id="btn1" value="동작1">
+    <input type="button" id="btn2" value="동작2">
+</body>
+</html>
