@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="member2">
+  	<!-- select 3개의 속성을 사용(id, resultType, parameterType)
+  		id : 사용할명칭, 현재 mapper 파일 내에서 유일한 값
+  		resultType : 조회 결과 값을 저장하기 위한 데이터 타입
+ 			(데이터 하나에 대한 타입을 지정)
+  	 -->
+  	<select id="selectAll" resultType="com.mystudy.mybatis.MemberVO">
+  		SELECT IDX, ID, PWD, NAME, AGE, ADDRESS, REG
+    	FROM MEMBER2
+    	ORDER BY IDX
+  	</select>
+  	
+  	<select id="selectOne" resultType="com.mystudy.mybatis.MemberVO" parameterType="string">
+  		SELECT IDX, ID, PWD, NAME, AGE, ADDRESS, REG
+    	FROM MEMBER2
+    	WHERE ID = #{id}
+  	</select>
+  	
+  	<!-- INSERT 작업용 SQL -->
+  	<!-- parameterType : 입력을 위한 데이터 받을 때 사용할 데이터 타입 지정 -->
+  	<insert id="insertMember" parameterType="com.mystudy.mybatis.MemberVO">
+  		INSERT INTO MEMBER2
+  			   (IDX, ID, PWD, NAME, AGE, ADDRESS, REG)
+  		 VALUES(MEMBER2_SEQ.NEXTVAL, #{id}, #{pwd}, #{name}, #{age}, #{address}, SYSDATE)	
+  	</insert>
+  	
+  	<delete id="deleteMember" parameterType="com.mystudy.mybatis.MemberVO">
+  		DELETE FROM MEMBER2 WHERE ID = #{id}
+  	</delete>
+  </mapper>

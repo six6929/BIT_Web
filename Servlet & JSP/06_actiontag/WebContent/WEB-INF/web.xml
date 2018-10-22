@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>06_actiontag</display-name>
+  <jsp-config>
+  	<jsp-property-group>
+  		<!-- 적용할 대상 -->
+  		<url-pattern>/include_webxml/view/*</url-pattern>
+  		
+  		<!-- 대상의 앞쪽에 include 할 파일 설정 -->
+  		<include-prelude>/include_webxml/common/variable.jsp</include-prelude>
+  		
+  		<!-- 대상의 뒤쪽에 include 할 파일 설정 -->
+  		<include-coda>/include_webxml/common/footer.jsp</include-coda>
+  	</jsp-property-group>
+  </jsp-config>
+</web-app>
