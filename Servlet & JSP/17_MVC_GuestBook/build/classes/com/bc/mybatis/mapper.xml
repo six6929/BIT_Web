@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper 태그의 namespace 속성 필수 작성  -->  
+<mapper namespace="guestbook">
+	<select id="all" resultType="guestbookVO">
+		SELECT * FROM GUESTBOOK ORDER BY IDX
+	</select>
+	
+	<select id="one" resultType="guestbookVO" parameterType="string">
+		SELECT * FROM GUESTBOOK WHERE IDX = #{idx}
+	</select>	
+	
+	<insert id="insert" parameterType="guestbookVO">
+		INSERT INTO GUESTBOOK
+			   (IDX, NAME, SUBJECT, 
+			    CONTENT, EMAIL, PWD, REGDATE)
+		VALUES (GUESTBOOK_SEQ.NEXTVAL, #{name}, #{subject},
+			    #{content}, #{email}, #{pwd}, SYSDATE)
+	</insert>
+	
+	<update id="update" parameterType="guestbookVO">
+		UPDATE GUESTBOOK
+		SET NAME = #{name},
+		    SUBJECT = #{subject}, 
+		    CONTENT = #{content}, 
+		    EMAIL = #{email}, 
+		    REGDATE = SYSDATE
+		WHERE IDX = #{idx}
+	</update>
+	
+	<delete id="delete" parameterType="string">
+		DELETE FROM GUESTBOOK WHERE IDX = #{idx}
+	</delete>	
+</mapper>  
+
+
+
+
+
+
