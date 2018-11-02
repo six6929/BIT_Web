@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper 태그의 namespace 속성 필수 작성 -->
+<mapper namespace="hr">
+	<!-- 직원테이블 전체 목록 조회 -->
+	<select id="list" resultType="com.bc.model.vo.EmployeeVO">
+		SELECT * FROM EMPLOYEES ORDER BY EMPLOYEE_ID
+	</select>
+	
+	<!-- 부서코드에 해당하는 직원 조회 -->
+	<select id="deptList" resultType="com.bc.model.vo.EmployeeVO" parameterType="String">
+		SELECT * 
+		FROM EMPLOYEES 
+		WHERE DEPARTMENT_ID = #{deptno } 
+		ORDER BY EMPLOYEE_ID
+	</select>
+	
+
+	
+ 	<select id="fullnameList" resultType="com.bc.model.vo.EmployeeVO" parameterType="String">
+		SELECT *
+		FROM EMPLOYEES
+		WHERE UPPER(FIRST_NAME) = UPPER(#{first_name}) OR UPPER(LAST_NAME) = UPPER(#{last_name})
+		<!-- WHERE (FIRST_NAME || ' ' || LAST_NAME) LIKE UPPER('%' || #{fullname} || '%') -->
+	</select>
+	
+	<!-- 동적검색(idx, keyword) -->
+	<select id="search" resultType="com.bc.model.vo.EmployeeVO" parameterType="Map">
+		SELECT *
+			FROM EMPLOYEES
+			<choose>
+				<when test="idx == 0"><!-- 사번조회 -->
+					WHERE EMPLOYEE_ID = #{keyword}
+				</when>
+				<when test="idx == 1"><!-- 이름조회 -->
+					WHERE UPPER(FIRST_NAME) = UPPER(#{keyword}) OR UPPER(LAST_NAME) = UPPER(#{keyword})
+				</when>
+				<when test="idx == 2"><!-- 직종조회 -->
+					WHERE JOB_ID = #{keyword}
+				</when>
+				<when test="idx == 3"><!-- 부서조회 -->
+					WHERE DEPARTMENT_ID = #{keyword}
+				</when>
+			</choose>
+	</select>
+	
+	<select id="searchID" resultType="com.bc.model.vo.EmployeeVO" parameterType="String">
+		SELECT *
+ 		  FROM EMPLOYEES
+ 		WHERE EMPLOYEE_ID = #{keyword}
+ 	</select>
+	<select id="searchJobiD" resultType="com.bc.model.vo.EmployeeVO" parameterType="String">
+		SELECT *
+			FROM EMPLOYEES
+			WHERE EMPLOYEE_ID = #{keyword}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
