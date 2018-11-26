@@ -1,0 +1,13 @@
+<AOP 설정을 이용한 로그 남기기>
+1. pom.xml 파일에 AOP 사용을 위한 라이브러리 등록(aspectjweaver)
+	<dependencies>
+		<!-- AOP 사용을 위한 라이브러리 등록(aspectjweaver)  -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.11</version>
+		</dependency>
+
+2. applicationContext.xml 파일에 AOP 설정
+2-1. 네임스페이스 aop 추가
+2-2. AOP 설정
