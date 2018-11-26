@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<!-- 어노테이션 설정된 클래스 객체 생성을 위해 1. 네임스페이스 추가 : context 2. <context:component-scan> 
+		설정 -->
+	<context:component-scan
+		base-package="com.spring.biz" />
+
+	<!-- ========= AOP 설정 ========= -->
+	<!-- AOP 설정 (xmlns:aop 추가) -->
+	<!-- *Impl 클래스의 모든 메소드 실행 직전에 LogAdvice.printLog() 실행 -->
+	<!-- <bean id="log" class="com.spring.biz.common.LogAdvice" />
+	<aop:config>
+		<aop:pointcut id="allPointcut" 
+			expression="execution(* com.spring.biz..*Impl.*(..))" />
+		* com.spring.biz.. *Impl.*(..)
+		  메소드명을 지정 // 클래스명이 Impl로 끝나는것 // 파라미터값이 무엇이든
+		<aop:aspect ref="log">
+			<aop:before pointcut-ref="allPointcut" method="printLog"/>
+		</aop:aspect>
+	</aop:config> -->
+	
+	<!-- Log4jAdvice 클래스 사용으로 로그 남기기 -->
+	<bean id="log4j" class="com.spring.biz.common.Log4jAdvice" />
+	<aop:config>
+		<!-- pointcut : 핵심관심 중 AOP 적용 대상으로 선정된 메소드 -->
+		<aop:pointcut id="allPointcut" 
+			expression="execution(* com.spring.biz..*Impl.*(..))" />
+		<aop:pointcut id="getPointcut" 
+			expression="execution(* com.spring.biz..*Impl.get*(..))" />
+		<!-- * com.spring.biz.. *Impl.*(..) -->
+		<!--   메소드명을 지정 // 클래스명이 Impl로 끝나는것 // 파라미터값이 무엇이든 -->
+		<aop:aspect ref="log4j">
+			<aop:before pointcut-ref="getPointcut" method="printLogging"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
